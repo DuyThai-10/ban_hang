@@ -1,0 +1,116 @@
+*{ 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background-color: white;
+    padding: 20px 70px;
+}
+
+.container{
+    display: flex;
+    width: 100%;
+    gap: 25px;
+}
+
+.Menu div{
+    height: 55px;
+    padding: 16px 10px;
+    font-size: 20px;
+    color: #555;
+    border-bottom: 1px solid #f1f1f1;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.Menu div:hover{
+    background-color: #f5f5f5;
+    color: #20a9d1;
+    padding-left: 20px;
+}
+
+.Menu span{
+    display: inline-block;
+    font-size: 18px;
+    color: #888;
+    transition: 0.3s ease;
+}
+
+
+.Menu :hover span{
+    transform: translateX(5px);
+    color: #20a9d1;
+}
+
+.ShopList{
+    display: flex;
+    gap: 20px;
+    overflow: hidden;
+    flex: 1;
+}
+
+.ShopCard{
+    width: 300px;
+    min-width: 300px;
+    height: 380px;
+    background-color: white;
+    border: 1px solid #eee;
+    box-shadow: 0 20px 8px rgba(0, 0, 0, 0.08);
+}
+
+.ShopCard img{
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    display: block;
+}
+
+.ShopInfo{
+    padding:12px;
+}
+
+.ShopInfo h3{
+    font-size: 18px;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 8px;
+}
+
+.ShopInfo p{
+    color: #999;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.comment{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.comment b{
+    font-size: 14px;
+    line-height: 20px;
+    color: #555;
+}
+
+.avatar{
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    border-radius: 50%;
+    background-color: #eee;
+}
