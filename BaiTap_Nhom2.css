@@ -1,0 +1,447 @@
+/* Phần 1: của Giang */
+
+* {
+                box-sizing: border-box;
+                padding: 0;
+                margin: 0;
+            }
+            
+            body {
+                font-family: arial, sans-serif;
+                font-size: 14px;
+                background-color: white;
+            }
+            
+            .header {
+                width: 100%;
+                height: 80px;
+                display: flex;
+                align-items: center;
+            }
+            
+            .logo {
+                display: flex;
+                align-items: center;
+                font-size: 18px;
+                font-weight: bold;
+            }
+            
+            .logo-icon {
+                width: 32px;
+                height: 32px;
+                background-color: blue;
+                color: white;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                margin-right: 8px;
+                justify-content: center;
+            }
+            
+            .nav {
+                margin-left: auto;
+                display: flex;
+                gap: 35px;
+            }
+            
+            .nav a {
+                text-decoration: none;
+                color: #999;
+                font-size: 14px;
+            }
+            
+            .nav a:hover {
+                color: #222;
+            }
+            
+            .nav .active {
+                color: #222;
+                font-weight: bold;
+            }
+            
+            .hero {
+                width: 100%;
+                max-width: 1200px;
+                margin: 40px auto;
+                display: flex;
+                align-items: center;
+                padding: 20px 50px;
+            }
+            
+            .hero-text {
+                width: 45%;
+            }
+            
+            .hero-text h1 {
+                font-size: 42px;
+                line-height: 1.2;
+                color: #111;
+                margin-bottom: 25px;
+            }
+            
+            .hero-text p {
+                width: 400px;
+                font-size: 16px;
+                line-height: 1.6;
+                color: #888;
+                margin-bottom: 30px;
+            }
+            
+            .hero-text button {
+                background-color: #458ff6;
+                color: white;
+                border: none;
+                border-radius: 30px;
+                padding: 15px 30px;
+                font-size: 14px;
+                cursor: pointer;
+            }
+            
+            .hero-text button:hover {
+                background-color: #2878e8;
+            }
+            
+            .hero-image {
+                width: 55%;
+                display: flex;
+                justify-content: center;
+            }
+            
+            .hero-image img {
+                width: 100%;
+                max-width: 550px;
+                height: auto;
+            }
+/* Phần 1: của Giang */
+
+
+/* Phần 2: của Thái */
+
+.title {
+    text-align: center;
+}
+
+.products img {
+    max-width: 150px;
+    height: auto;
+}
+
+.sanpham1 {
+    margin: 10px;
+    border: 1px solid cadetblue;
+    width: fit-content;
+    padding: 20px;
+    border-radius: 10%;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    justify-items: center;
+}
+
+.button {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Phần 2 của Thái */
+
+
+
+
+
+
+
+
+/* Thống làm phần 3 */
+.healthcare {
+    width: 60%;
+    max-width: 1100px;
+
+    margin: 80px auto;
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+.healthcare-image {
+    width: 55%;
+}
+
+.healthcare-image img {
+    width: 100%;
+    display: block;
+}
+
+.healthcare-content {
+    width: 45%;
+}
+
+.healthcare-content h2 {
+    font-size: 28px;
+    color: black;
+}
+
+.line {
+    width: 50px;
+    height: 3px;
+    background-color: grey ;
+    margin: 20px 0;
+}
+
+.healthcare-content p {
+    font-size: 16px;
+    color: #626262;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.healthcare-content button {
+    width: 120px;
+    height: 40px;
+    border-radius: 999px;
+    background-color: white;
+    color: blue;
+    padding: 0;
+    text-align: center;
+    border: 2px solid blue;
+}
+
+.apps{
+    width: 60%;
+    max-width: 1100px;
+
+    margin: 80px auto;
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+.apps-image {
+    width: 55%;
+}
+
+.apps-image img {
+    width: 100%;
+    display: block;
+}
+
+.apps-content {
+    width: 45%;
+}
+
+.apps-content h2 {
+    font-size: 28px;
+    color: black;
+}
+
+.apps-content p {
+    font-size: 16px;
+    color: #626262;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.apps-content button {
+    width: 120px;
+    height: 40px;
+    border-radius: 999px;
+    background-color: white;
+    color: blue;
+    padding: 0;
+    text-align: center;
+    border: 2px solid blue;
+}
+
+
+
+/* =================================
+   PHẦN 3 - TESTIMONIAL
+================================= */
+
+.testimonial {
+    width: 70%;
+    max-width: 950px;
+
+    margin: 100px auto;
+
+    padding: 35px 50px;
+
+    border-radius: 15px;
+
+    background: linear-gradient(
+        120deg,
+        #55b9e8,
+        #4b8eea
+    );
+
+    color: white;
+}
+
+
+/* Tiêu đề */
+
+.testimonial h2 {
+    text-align: center;
+
+    font-size: 22px;
+
+    margin-bottom: 10px;
+}
+
+
+/* Đường gạch */
+
+.white-line {
+    width: 40px;
+    height: 2px;
+
+    background-color: white;
+
+    margin: 0 auto 30px;
+}
+
+
+/* Nội dung customer */
+
+.customer {
+    display: flex;
+    align-items: center;
+
+    gap: 70px;
+}
+
+
+/* Thông tin khách hàng */
+
+.customer-info {
+    width: 40%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+}
+
+.customer-info img {
+    width: 65px;
+    height: 65px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+}
+
+.customer-info h3 {
+    font-size: 14px;
+}
+
+.customer-info p {
+    font-size: 11px;
+
+    margin-top: 5px;
+
+    opacity: 0.8;
+}
+
+
+/* Nội dung đánh giá */
+
+.customer-text {
+    width: 60%;
+}
+
+.customer-text p {
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* Phần của THống */
+
+
+
+
+
+
+
+
+/* Phần của QUỳnh */
+
+
+.articles {
+    text-align: center;
+    padding: 40px;
+}
+
+.line {
+    width: 30px;
+    height: 2px;
+    background-color: black;
+    margin: 20px auto;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    width: 20%;
+    height: 350px;
+    text-align: left;
+    background-color: white;
+    box-shadow: 0 2px 5px gray;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card h3 {
+    font-size: 15px;
+    padding: 10px;
+}
+
+.card p {
+    font-size: 12px;
+    padding: 10px;
+    color: gray;
+}
+
+.card a {
+    padding: 10px;
+    color: blue;
+    text-decoration: none;
+}
+
+.articles button {
+    width: 120px;
+    height: 40px;
+    border-radius: 999px;
+    background-color: white;
+    color: blue;
+    text-align: center;
+    border: 2px solid blue;
+    margin: 20px;
+}
+
+.footer {
+    margin-top: 80px;
+    padding: 40px;
+    background-color: #4aa3df;
+    color: white;
+}
+
+.footer-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer p {
+    font-size: 12px;
+}
