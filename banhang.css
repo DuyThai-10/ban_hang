@@ -1,0 +1,422 @@
+
+/* 1. CÀI ĐẶT CHUNG */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #222;
+    background-color: white;
+    line-height: 1.5;
+}
+
+.section-p1 {
+    padding: 45px 6%;
+}
+
+/* 2. HEADER */
+#header {
+    width: 100%;
+    min-height: 85px;
+    padding: 12px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    background-color: #e3e6f3;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.logo {
+    width: 65px;
+    height: 55px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.logo-text {
+    color: #088178;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    list-style: none;
+}
+
+.navbar a {
+    color: #222;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #088178;
+}
+
+.navbar i {
+    font-size: 20px;
+}
+
+/* 3. BANNER */
+#hero {
+    width: 100%;
+    min-height: 390px;
+    padding: 60px 8%;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(110deg, #e8f6f3, #f5faf9);
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+#hero h4 {
+    color: #088178;
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+#hero h2 {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+#hero h1 {
+    color: #088178;
+    font-size: 38px;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+#hero p {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.shop-button {
+    display: inline-block;
+    padding: 12px 25px;
+    color: white;
+    background-color: #088178;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.shop-button:hover {
+    background-color: #06665f;
+}
+
+/* 4. DỊCH VỤ */
+#feature {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.fe-box {
+    flex: 1;
+    min-width: 0;
+    padding: 25px 12px;
+    text-align: center;
+    border: 1px solid #cce7d0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px #eeeeee;
+    background-color: white;
+}
+
+.fe-box i {
+    display: block;
+    color: #088178;
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.fe-box h3 {
+    font-size: 14px;
+}
+
+/* 5. SẢN PHẨM */
+#product1 {
+    text-align: center;
+}
+
+.section-heading {
+    margin-bottom: 30px;
+}
+
+.section-heading h2 {
+    font-size: 30px;
+    margin-bottom: 7px;
+}
+
+.section-heading p {
+    color: #777;
+}
+
+.pro-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+    text-align: left;
+}
+
+.pro {
+    min-width: 0;
+    position: relative;
+    padding: 12px;
+    border: 1px solid #cce7d0;
+    border-radius: 18px;
+    background-color: white;
+    box-shadow: 0 4px 14px #eeeeee;
+    transition: 0.2s;
+}
+
+.pro:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px #dddddd;
+}
+
+.pro img {
+    display: block;
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 13px;
+}
+
+.des {
+    padding: 12px 4px 38px;
+}
+
+.des span {
+    color: #777;
+    font-size: 13px;
+}
+
+.des h3 {
+    min-height: 42px;
+    margin: 5px 0;
+    font-size: 15px;
+    line-height: 1.35;
+}
+
+.star {
+    color: #f3b519;
+    font-size: 13px;
+    margin: 7px 0;
+}
+
+.des h4 {
+    color: #088178;
+    font-size: 17px;
+}
+
+.cart-btn {
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    color: #088178;
+    background-color: #e8f6f3;
+    text-decoration: none;
+}
+
+.cart-btn:hover {
+    color: white;
+    background-color: #088178;
+}
+
+/* 6. GIỚI THIỆU */
+.about-section {
+    padding: 45px 6%;
+    text-align: center;
+    background-color: #e8f6f3;
+}
+
+.about-section h2 {
+    margin-bottom: 10px;
+    font-size: 27px;
+}
+
+.about-section p {
+    color: #555;
+}
+
+/* 7. FOOTER */
+footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    background-color: #e3e6f3;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    max-width: 320px;
+}
+
+.footer-col h3 {
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.footer-logo {
+    color: #088178;
+    font-size: 23px;
+}
+
+.footer-col p,
+.footer-col a {
+    color: #555;
+    font-size: 14px;
+}
+
+.footer-col a {
+    text-decoration: none;
+}
+
+.footer-col a:hover {
+    color: #088178;
+}
+
+.copyright {
+    width: 100%;
+    padding-top: 20px;
+    text-align: center;
+    border-top: 1px solid #c8cbd6;
+}
+
+.copyright p {
+    color: #555;
+    font-size: 13px;
+}
+
+/* 8. TABLET */
+@media (max-width: 900px) {
+    #header {
+        padding: 15px 4%;
+    }
+
+    .navbar {
+        gap: 15px;
+    }
+
+    .section-p1 {
+        padding: 35px 4%;
+    }
+
+    .pro-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .pro img {
+        height: 250px;
+    }
+}
+
+/* 9. ĐIỆN THOẠI */
+@media (max-width: 600px) {
+    #header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .navbar {
+        justify-content: center;
+        gap: 12px 18px;
+    }
+
+    .navbar a {
+        font-size: 14px;
+    }
+
+    #hero {
+        min-height: 330px;
+        padding: 40px 6%;
+    }
+
+    #hero h2 {
+        font-size: 25px;
+    }
+
+    #hero h1 {
+        font-size: 30px;
+    }
+
+    #feature {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .fe-box {
+        flex: 1 1 42%;
+    }
+
+    .section-heading h2 {
+        font-size: 25px;
+    }
+
+    .pro-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .pro {
+        padding: 8px;
+    }
+
+    .pro img {
+        height: 170px;
+    }
+
+    .des h3 {
+        font-size: 13px;
+    }
+
+    .des h4 {
+        font-size: 15px;
+    }
+
+    .star {
+        font-size: 11px;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+
+    .footer-col {
+        max-width: 100%;
+    }
+}
