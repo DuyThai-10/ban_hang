@@ -1,32 +1,11 @@
-/* 1. RESET CƠ BẢN - Cho đẹp sẵn từ đầu */
-
+/* ==========================================================================
+   1. RESET CƠ BẢN & CÀI ĐẶT CHUNG
+   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
-}
-
-#header {
-    padding: 10px 8%;
-}
-
-.logo {
-    height: 35px;
-    width: auto;
-    object-fit: contain;
-}
-
-.logo-text {
-    font-size: 18px;
-}
-
-.navbar {
-    gap: 18px;
-}
-
-.navbar a {
-    font-size: 14px;
 }
 
 body {
@@ -43,9 +22,6 @@ ul {
     list-style: none;
 }
 
-
-/* Khoảng cách chung cho các phần */
-
 .section-p1 {
     padding: 40px 8%;
 }
@@ -55,9 +31,9 @@ ul {
     margin-bottom: 30px;
 }
 
-
-/* 2. HEADER - Thanh menu trắng nổi bật */
-
+/* ==========================================================================
+   2. HEADER (THANH MENU)
+   ========================================================================== */
 #header {
     display: flex;
     justify-content: space-between;
@@ -73,6 +49,12 @@ ul {
     color: #0f8b8d;
 }
 
+.logo {
+    height: 35px;
+    width: auto;
+    object-fit: contain;
+}
+
 .navbar {
     display: flex;
     gap: 25px;
@@ -80,6 +62,7 @@ ul {
 
 .navbar a {
     font-weight: 600;
+    font-size: 14px;
 }
 
 .navbar a:hover,
@@ -87,9 +70,9 @@ ul {
     color: #0f8b8d;
 }
 
-
-/* 3. BANNER (HERO) - Khối nổi bật màu xanh dịu */
-
+/* ==========================================================================
+   3. BANNER (HERO SECTION)
+   ========================================================================== */
 #hero {
     background: #e8f3f1;
     padding: 60px 8%;
@@ -111,9 +94,9 @@ ul {
     border-radius: 6px;
 }
 
-
-/* 4. DỊCH VỤ - Xếp hàng ngang đẹp mắt */
-
+/* ==========================================================================
+   4. DỊCH VỤ (FEATURE SECTION)
+   ========================================================================== */
 #feature {
     display: flex;
     justify-content: space-between;
@@ -136,9 +119,9 @@ ul {
     margin-bottom: 10px;
 }
 
-
-/* 5. SẢN PHẨM - Thẻ khung vuông xịn xò */
-
+/* ==========================================================================
+   5. KHỐI SẢN PHẨM (PRODUCT CARDS)
+   ========================================================================== */
 .pro-container {
     display: flex;
     justify-content: center;
@@ -152,6 +135,7 @@ ul {
     border-radius: 10px;
     padding: 15px;
     width: 230px;
+    position: relative; /* Thêm vào để định vị nút cart-btn chuẩn xác */
 }
 
 .pro img {
@@ -200,9 +184,9 @@ ul {
     justify-content: center;
 }
 
-
-/* 6. GIỚI THIỆU & FOOTER */
-
+/* ==========================================================================
+   6. GIỚI THIỆU & FOOTER
+   ========================================================================== */
 .about-section {
     background: #0f8b8d;
     color: white;
@@ -213,7 +197,7 @@ ul {
 footer {
     background: #ffffff;
     display: flex;
-justify-content: space-between;
+    justify-content: space-between;
     flex-wrap: wrap;
     gap: 20px;
     border-top: 1px solid #e1e8ef;
