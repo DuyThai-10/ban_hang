@@ -1,0 +1,185 @@
+/* ==========================================================================
+   1. RESET CƠ BẢN & CÀI ĐẶT CHUNG
+   ========================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f6fa;
+    color: #2f3640;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+.section-p1 {
+    padding: 40px 8%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+/* ==========================================================================
+   2. HEADER (THANH MENU)
+   ========================================================================== */
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8%;
+    background-color: #ffffff;
+    top: 0;
+}
+
+.logo-text {
+    font-size: 22px;
+    font-weight: bold;
+    color: #0f8b8d;
+}
+
+.logo {
+    height: 35px;
+    width: auto;
+    object-fit: contain;
+}
+
+.navbar {
+    display: flex;
+    gap: 25px;
+}
+
+.navbar a {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #0f8b8d;
+}
+
+.btn-login,
+.btn-signup {
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.btn-login {
+    background-color: #0D9295;
+    color: white;
+}
+
+.btn-signup {
+    background-color: white;
+    color: #0D9295;
+    border: 1px solid #0D9295;
+}
+
+
+/* ==========================================================================
+   3. About
+   ========================================================================== */
+
+
+/* ABOUT */
+
+.about {
+    padding: 50px 8%;
+    background-color: #ffffff;
+    text-align: left;
+}
+
+.about h1 {
+    color: #0f8b8d;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.about h2 {
+    color: #0f8b8d;
+    font-size: 22px;
+    margin: 25px 0 10px;
+}
+
+.about p {
+    color: #555555;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    max-width: 850px;
+}
+
+
+/* ẢNH CỬA HÀNG */
+
+.about img {
+    display: block;
+    width: 100%;
+    max-width: 750px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 25px 0;
+}
+
+
+/* ĐIỆN THOẠI */
+
+@media (max-width: 600px) {
+    .about {
+        padding: 30px 5%;
+    }
+    .about h1 {
+        font-size: 27px;
+    }
+    .about img {
+        height: 220px;
+    }
+}
+
+footer {
+    background: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    border-top: 1px solid #e1e8ef;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-logo {
+    color: #0f8b8d;
+}
+
+.copyright {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    color: #777;
+}
