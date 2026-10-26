@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký - WEB SHOP</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #EAF5F2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .khung-dang-ky {
+            width: 380px;
+            max-width: calc(100% - 64px);
+            margin: 40px auto;
+            padding: 25px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #0D9295;
+            margin-bottom: 8px;
+        }
+
+        .mo-ta {
+            text-align: center;
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-top: 14px;
+            margin-bottom: 6px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 11px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #0D9295;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 22px;
+            padding: 12px;
+            background-color: #0D9295;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #087477;
+        }
+
+        .lien-ket {
+            text-align: center;
+            margin-top: 18px;
+        }
+
+        a {
+            color: #0D9295;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .quay-lai {
+            display: block;
+            text-align: center;
+            margin-top: 18px;
+        }
+
+        #thongBao {
+            margin-top: 12px;
+            text-align: center;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="khung-dang-ky">
+        <h1>WEB SHOP</h1>
+        <p class="mo-ta">Tạo tài khoản mới</p>
+
+        <form id="formDangKy">
+            <label for="hoTen">Họ và tên</label>
+            <input type="text" id="hoTen" required
+                   placeholder="Nhập họ và tên">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" required
+                   placeholder="Nhập email">
+
+            <label for="tenDangNhap">Tên đăng nhập</label>
+            <input type="text" id="tenDangNhap" required
+                   placeholder="Nhập tên đăng nhập">
+
+            <label for="matKhau">Mật khẩu</label>
+            <input type="password" id="matKhau" required minlength="6"
+                   placeholder="Ít nhất 6 ký tự">
+
+            <label for="xacNhanMatKhau">Xác nhận mật khẩu</label>
+            <input type="password" id="xacNhanMatKhau" required
+                   placeholder="Nhập lại mật khẩu">
+
+            <button type="submit">Đăng ký</button>
+
+            <p id="thongBao"></p>
+        </form>
+
+        <p class="lien-ket">
+            Đã có tài khoản?
+            <a href="../LogIn/login.html">Đăng nhập</a>
+        </p>
+
+        <a class="quay-lai" href="../Home/home.html">
+            ← Quay lại trang chủ
+        </a>
+    </div>
+
+    <script>
+        const form = document.getElementById("formDangKy");
+        const thongBao = document.getElementById("thongBao");
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const matKhau = document.getElementById("matKhau").value;
+            const xacNhan = document.getElementById("xacNhanMatKhau").value;
+
+            if (matKhau !== xacNhan) {
+                thongBao.style.color = "red";
+                thongBao.textContent = "Mật khẩu xác nhận không khớp!";
+                return;
+            }
+
+            thongBao.style.color = "#0D9295";
+            thongBao.textContent =
+                "Kiểm tra thành công! Trang đăng ký chưa kết nối cơ sở dữ liệu.";
+        });
+    </script>
+</body>
+</html>

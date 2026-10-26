@@ -70,6 +70,27 @@ ul {
     color: #0f8b8d;
 }
 
+.btn-login, .btn-signup {
+    align-items: center;
+    
+    gap: 8px;
+    padding: 8px 14px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.btn-login {
+    background-color: #0D9295;
+    color: white;
+}
+
+.btn-signup {
+    background-color: white;
+    color: #0D9295;
+    border: 1px solid #0D9295;
+}
+
 /* ==========================================================================
    3. BANNER (HERO SECTION)
    ========================================================================== */
