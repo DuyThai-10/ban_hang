@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập - WEB SHOP</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #EAF5F2;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .khung-dang-nhap {
+            background-color: white;
+            width: 400px;
+            max-width: 100%;
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            text-align: center;
+            color: #0D9295;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #263746;
+            margin-bottom: 10px;
+        }
+
+        .mo-ta {
+            text-align: center;
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 28px;
+        }
+
+        .nhom-input {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            color: #333;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #D5DEDE;
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: #0D9295;
+            box-shadow: 0 0 0 3px rgba(13, 146, 149, 0.12);
+        }
+
+        .tuy-chon {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            margin-bottom: 22px;
+        }
+
+        .ghi-nho {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #555;
+        }
+
+        .ghi-nho input {
+            width: auto;
+            accent-color: #0D9295;
+        }
+
+        a {
+            color: #0D9295;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .nut-dang-nhap {
+            width: 100%;
+            padding: 13px;
+            background-color: #0D9295;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .nut-dang-nhap:hover {
+            background-color: #087477;
+            transform: translateY(-1px);
+        }
+
+        .dang-ky {
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+            margin-top: 22px;
+        }
+
+        .quay-lai {
+            display: block;
+            text-align: center;
+            margin-top: 22px;
+            font-size: 14px;
+        }
+
+        #thongBao {
+            text-align: center;
+            font-size: 13px;
+            margin-top: 14px;
+        }
+
+        @media (max-width: 450px) {
+            .khung-dang-nhap {
+                padding: 25px 20px;
+            }
+
+            .tuy-chon {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="khung-dang-nhap">
+
+        <div class="logo">WEB SHOP</div>
+
+        <h2>Chào mừng trở lại!</h2>
+        <p class="mo-ta">Đăng nhập để tiếp tục mua sắm</p>
+
+        <form id="formDangNhap">
+
+            <div class="nhom-input">
+                <label for="tenDangNhap">Email hoặc tên đăng nhập</label>
+                <input
+                    type="text"
+                    id="tenDangNhap"
+                    placeholder="Nhập tài khoản của bạn"
+                    required>
+            </div>
+
+            <div class="nhom-input">
+                <label for="matKhau">Mật khẩu</label>
+                <input
+                    type="password"
+                    id="matKhau"
+                    placeholder="Nhập mật khẩu"
+                    required>
+            </div>
+
+            <div class="tuy-chon">
+                <label class="ghi-nho">
+                    <input type="checkbox" id="ghiNho">
+                    Ghi nhớ tôi
+                </label>
+
+                <a href="#">Quên mật khẩu?</a>
+            </div>
+
+            <button type="submit" class="nut-dang-nhap">
+                Đăng nhập
+            </button>
+
+            <p id="thongBao"></p>
+
+        </form>
+
+        <p class="dang-ky">
+            Chưa có tài khoản?
+            <a href="../SignUp/Signup.html">Đăng ký ngay</a>
+        </p>
+
+        <a class="quay-lai" href="../Home/home.html">
+            ← Quay lại trang chủ
+        </a>
+
+    </div>
+
+    <script>
+        document.getElementById("formDangNhap")
+            .addEventListener("submit", function(event) {
+                event.preventDefault();
+
+                document.getElementById("thongBao").style.color = "#0D9295";
+                document.getElementById("thongBao").textContent =
+                    "Giao diện đã hoạt động, nhưng chưa kết nối hệ thống xác thực tài khoản.";
+            });
+    </script>
+
+</body>
+</html>
