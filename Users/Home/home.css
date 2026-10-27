@@ -96,28 +96,60 @@ ul {
 
 
 /* ==========================================================================
-   3. BANNER (HERO SECTION)
+   3. BANNER (HERO SECTION) - ẢNH NỀN CSS
    ========================================================================== */
-
 #hero {
-    background: #e8f3f1;
-    padding: 60px 8%;
+    /* Chèn ảnh nền trực tiếp, kèm lớp phủ tối màu để chữ trắng đọc rõ hơn */
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1600') center/cover no-repeat;
+    
+    padding: 90px 8%;
     text-align: center;
+    color: #ffffff;      /* Đổi toàn bộ chữ trong banner thành màu trắng */
+    border-radius: 12px; /* Bo tròn góc cho đẹp */
+    margin: 15px 8%;     /* Khoảng cách hai bên lề */
+}
+
+#hero h4 {
+    font-size: 16px;
+    color: #f1c40f;      /* Màu vàng cho dòng ưu đãi */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#hero h2 {
+    font-size: 22px;
+    margin: 8px 0;
+    color: #e8f3f1;
 }
 
 #hero h1 {
-    color: #0f8b8d;
-    margin: 10px 0;
+    color: #ffffff;      /* Tiêu đề chính màu trắng */
+    font-size: 36px;
+    margin: 10px 0 15px 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Tạo bóng chữ cho nổi bật */
+}
+
+#hero p {
+    font-size: 16px;
+    color: #f1f5f9;
+    margin-bottom: 20px;
 }
 
 .shop-button {
     display: inline-block;
-    margin-top: 15px;
-    padding: 12px 25px;
+    padding: 12px 30px;
     background-color: #0f8b8d;
     color: #ffffff;
     font-weight: bold;
     border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.shop-button:hover {
+    background-color: #0a696a;
+    transform: translateY(-2px);
 }
 
 
