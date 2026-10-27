@@ -1,5 +1,5 @@
 /* ==========================================================================
-   1. RESET CƠ BẢN & CÀI ĐẶT CHUNG
+   1. CÀI ĐẶT CHUNG (RESET & BASE STYLES)
    ========================================================================== */
 
 * {
@@ -10,8 +10,8 @@
 }
 
 body {
-    background-color: #f5f6fa;
-    color: #2f3640;
+    background-color: #f5f6fa; /* Màu nền xám nhạt toàn trang */
+    color: #2f3640;            /* Màu chữ chính */
 }
 
 a {
@@ -23,95 +23,126 @@ ul {
     list-style: none;
 }
 
+/* Khoảng cách đệm chung cho các section nội dung */
 .section-p1 {
     padding: 40px 8%;
 }
 
-.section-heading {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
 
 /* ==========================================================================
-   2. HEADER (THANH MENU)
+   2. THANH MENU ĐẦU TRANG (HEADER & NAVBAR)
    ========================================================================== */
 
 #header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex;                 /* Dàn hàng ngang */
+    justify-content: space-between;/* Đẩy logo sang trái, menu sang phải */
+    align-items: center;           /* Căn giữa theo chiều dọc */
     padding: 15px 8%;
-    background-color: #ffffff;
+    background-color: #ffffff;     /* Nền trắng */
+    position: sticky;              /* Ghim cố định ở đầu trang khi cuộn */
     top: 0;
+    z-index: 1000;                 /* Luôn hiển thị nổi lên trên cùng */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Hiệu ứng bóng đổ nhẹ bên dưới */
 }
 
 .logo-text {
     font-size: 22px;
     font-weight: bold;
-    color: #0f8b8d;
-}
-
-.logo {
-    height: 35px;
-    width: auto;
-    object-fit: contain;
+    color: #0f8b8d;                /* Màu xanh thương hiệu */
 }
 
 .navbar {
     display: flex;
-    gap: 25px;
+    align-items: center;
+    gap: 25px;                     /* Khoảng cách giữa các mục menu */
 }
 
 .navbar a {
     font-weight: 600;
     font-size: 14px;
+    color: #2f3640;
+    transition: 0.2s;
 }
 
-.navbar a:hover {
+/* Hiệu ứng đổi màu khi rê chuột hoặc đang ở trang hiện tại (active) */
+.navbar a:hover, .navbar a.active {
     color: #0f8b8d;
-}
-
-.btn-login,
-.btn-signup {
-    align-items: center;
-    gap: 8px;
-    padding: 8px 14px;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-}
-
-.btn-login {
-    background-color: #0D9295;
-    color: white;
-}
-
-.btn-signup {
-    background-color: white;
-    color: #0D9295;
-    border: 1px solid #0D9295;
 }
 
 
 /* ==========================================================================
-   3. BANNER (HERO SECTION) - ẢNH NỀN CSS
+   3. KHU VỰC TÀI KHOẢN & ĐĂNG XUẤT TRÊN THANH NAV (#authMenu)
+   ========================================================================== */
+
+#authMenu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Định dạng nút Đăng nhập & Đăng ký */
+.btn-login, .btn-signup {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2f3640;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+
+.btn-login:hover, .btn-signup:hover {
+    color: #0f8b8d;
+}
+
+/* Định dạng khi đã đăng nhập (Hiển thị tên người dùng và nút Đăng xuất) */
+#authMenu div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#authMenu span {
+    font-weight: bold;
+    color: #0f8b8d;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+#btnDangXuat {
+    background-color: #e74c3c; /* Màu đỏ nổi bật cho nút đăng xuất */
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 13px;
+    transition: 0.2s;
+}
+
+#btnDangXuat:hover {
+    background-color: #c0392b; /* Đổi sang màu đỏ đậm khi rê chuột vào */
+}
+
+
+/* ==========================================================================
+   3. BANNER (HERO SECTION)
    ========================================================================== */
 #hero {
-    /* Chèn ảnh nền trực tiếp, kèm lớp phủ tối màu để chữ trắng đọc rõ hơn */
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
                 url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1600') center/cover no-repeat;
-    
     padding: 90px 8%;
     text-align: center;
-    color: #ffffff;      /* Đổi toàn bộ chữ trong banner thành màu trắng */
-    border-radius: 12px; /* Bo tròn góc cho đẹp */
-    margin: 15px 8%;     /* Khoảng cách hai bên lề */
+    color: #ffffff;
+    border-radius: 12px;
+    margin: 15px 8%;
 }
 
 #hero h4 {
     font-size: 16px;
-    color: #f1c40f;      /* Màu vàng cho dòng ưu đãi */
+    color: #f1c40f;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -124,10 +155,10 @@ ul {
 }
 
 #hero h1 {
-    color: #ffffff;      /* Tiêu đề chính màu trắng */
+    color: #ffffff;
     font-size: 36px;
     margin: 10px 0 15px 0;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Tạo bóng chữ cho nổi bật */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 #hero p {
@@ -170,6 +201,7 @@ ul {
     padding: 20px;
     text-align: center;
     border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
 .fe-box i {
@@ -197,7 +229,6 @@ ul {
     padding: 15px;
     width: 230px;
     position: relative;
-    /* Thêm vào để định vị nút cart-btn chuẩn xác */
 }
 
 .pro img {
@@ -265,6 +296,7 @@ footer {
     flex-wrap: wrap;
     gap: 20px;
     border-top: 1px solid #e1e8ef;
+    padding: 40px 8%;
 }
 
 .footer-col {

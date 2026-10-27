@@ -1,46 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - WEB SHOP</title>
-
-    <!-- ICON -->
+    <title>Về chúng tôi - WEB SHOP</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-    <!-- DUNG CHUNG CSS VOI TRANG HOME -->
     <link rel="stylesheet" href="about.css">
-
 </head>
-
 <body>
 
-    <!-- ================= 1. HEADER ================= -->
+    <!-- THANH NAV CHUNG -->
     <header id="header">
-        <a href="#" class="logo-link">
-            <img src="img/logo.jpg" class="logo" alt="Logo">
+        <a href="../Home/home.html" class="logo-link">
             <span class="logo-text">WEB SHOP</span>
         </a>
 
         <nav>
             <ul class="navbar">
                 <li><a href="../Home/home.html">Home</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="../Products/products.html">Products</a></li>
+                <li><a class="active" href="about.html">About</a></li>
                 <li><a href="../Contact/contact.html">Contact</a></li>
-
                 <li>
-                    <a href="#">
+                    <a href="../Cart/cart.html">
                         <i class="fa-solid fa-cart-shopping"></i>
                     </a>
                 </li>
-                <li>
+                <!-- Khung tài khoản dùng chung -->
+                <li id="authMenu">
                     <a href="../LogIn/login.html" class="btn-login">
                         <i class="fa-solid fa-right-to-bracket"></i> Đăng nhập
                     </a>
-                </li>
-                <li>
                     <a href="../SignUp/signup.html" class="btn-signup">
                         <i class="fa-solid fa-right-from-bracket"></i> Đăng ký
                     </a>
@@ -49,57 +39,51 @@
         </nav>
     </header>
 
-    <!-- ABOUT -->
-    <section class="about">
-        <h1>About Our Shop</h1>
-        <p>Welcome to WEB SHOP!</p>
-
-        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=900" alt="Our Store">
-
-        <h2>Who We Are</h2>
-        <p>
-            WEB SHOP offers modern and stylish products at affordable prices. We want to make online shopping easy and enjoyable for everyone.
-        </p>
-
-        <h2>Our Mission</h2>
-        <p>
-            Our mission is to provide quality products and excellent customer service. Your satisfaction is our priority.
-        </p>
-
-
+    <!-- BANNER TIÊU ĐỀ TRANG ABOUT -->
+    <section id="about-header">
+        <h2>#Chungtoi</h2>
+        <p>Tìm hiểu thêm về câu chuyện và sứ mệnh của chúng tôi</p>
     </section>
 
-    <!-- ================= 6. FOOTER ================= -->
-    <footer id="contact" class="section-p1">
-        <div class="footer-col">
-            <h2 class="footer-logo">WEB SHOP</h2>
-            <p><strong>Địa chỉ:</strong> 123 Đường ABC, Quận 1, TP.HCM</p>
-            <p><strong>Điện thoại:</strong> +84 901 234 567</p>
-            <p><strong>Giờ làm việc:</strong> 08:00 - 22:00, T2 - CN</p>
+    <!-- NỘI DUNG CHÍNH (CHIA 2 CỘT) -->
+    <section id="about-head" class="section-p1">
+        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1000" alt="Cửa hàng Web Shop">
+        <div class="about-details">
+            <h2>Chúng tôi là ai?</h2>
+            <p><strong>WEB SHOP</strong> ra đời với sứ mệnh mang đến cho khách hàng những trải nghiệm thời trang hiện đại, cá tính và chất lượng cao cấp nhất. Chúng tôi không chỉ bán sản phẩm, mà còn mang lại sự tự tin và phong cách sống riêng cho từng khách hàng.</p>
+            <p>Với hệ thống vận hành chuyên nghiệp, danh mục sản phẩm đa dạng từ các thương hiệu lớn và chính sách chăm sóc khách hàng tận tâm 24/7, chúng tôi tự hào là điểm đến mua sắm trực tuyến tin cậy của hàng nghìn tín đồ thời trang.</p>
+            
+            
+    
         </div>
+    </section>
 
-        <div class="footer-col">
-            <h3>Về chúng tôi</h3>
-            <a href="#about">Giới thiệu</a>
-            <a href="#contact">Thông tin giao hàng</a>
-            <a href="#contact">Chính sách bảo mật</a>
-            <a href="#contact">Điều khoản dịch vụ</a>
+    <!-- KHỐI THỐNG KÊ (ĐIỂM NHẤN UY TÍN) -->
+    <section id="about-app" class="section-p1">
+        <div class="stat-box">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <h3>10,000+</h3>
+            <p>Đơn hàng thành công</p>
         </div>
-
-        <div class="footer-col">
-            <h3>Tài khoản</h3>
-            <a href="#contact">Đăng nhập</a>
-            <a href="#product1">Xem sản phẩm</a>
-            <a href="#product1">Sản phẩm yêu thích</a>
-            <a href="#contact">Theo dõi đơn hàng</a>
+        <div class="stat-box">
+            <i class="fa-solid fa-users"></i>
+            <h3>5,000+</h3>
+            <p>Khách hàng thân thiết</p>
         </div>
+        <div class="stat-box">
+            <i class="fa-solid fa-award"></i>
+            <h3>100%</h3>
+            <p>Sản phẩm chính hãng</p>
+        </div>
+    </section>
 
+    <!-- FOOTER CHUNG -->
+    <footer class="section-p1">
         <div class="copyright">
             <p>© 2026 Web Bán Hàng. All rights reserved.</p>
         </div>
     </footer>
 
-
+    
 </body>
-
 </html>
