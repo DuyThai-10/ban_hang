@@ -1,0 +1,132 @@
+    /* ==========================================================================
+   1. RESET CƠ BẢN & CÀI ĐẶT CHUNG
+   ========================================================================== */
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+    
+    body {
+        background-color: #f5f6fa;
+        color: #2f3640;
+    }
+    
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    ul {
+        list-style: none;
+    }
+    
+    .section-p1 {
+        padding: 40px 8%;
+    }
+    
+    .section-heading {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    /* ==========================================================================
+   2. HEADER (THANH MENU)
+   ========================================================================== */
+    
+    #header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 8%;
+        background-color: #ffffff;
+        top: 0;
+    }
+    
+    .logo-text {
+        font-size: 22px;
+        font-weight: bold;
+        color: #0f8b8d;
+    }
+    
+    .logo {
+        height: 35px;
+        width: auto;
+        object-fit: contain;
+    }
+    
+    .navbar {
+        display: flex;
+        gap: 25px;
+    }
+    
+    .navbar a {
+        font-weight: 600;
+        font-size: 14px;
+    }
+    
+    .navbar a:hover,
+    .navbar a.active {
+        color: #0f8b8d;
+    }
+    
+    .btn-login,
+    .btn-signup {
+        align-items: center;
+        gap: 8px;
+        padding: 8px 14px;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+    }
+    
+    .btn-login {
+        background-color: #0D9295;
+        color: white;
+    }
+    
+    .btn-signup {
+        background-color: white;
+        color: #0D9295;
+        border: 1px solid #0D9295;
+    }
+    /* CONTACT */
+    
+    #contact {
+        padding: 40px 8%;
+        background-color: #ffffff;
+        color: #1a1a1a;
+    }
+    
+    #contact h1 {
+        color: #0f8b8d;
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+    
+    #contact p {
+        font-size: 15px;
+        line-height: 1.8;
+        margin-bottom: 12px;
+    }
+    
+    #contact i {
+        color: #0f8b8d;
+        width: 25px;
+        font-size: 17px;
+    }
+    /* FOOTER */
+    
+    #footer {
+        padding: 20px 8%;
+        background-color: #f5f6fa;
+        border-top: 1px solid #e1e8ef;
+        text-align: center;
+        color: #555555;
+    }
+    
+    #footer p {
+        margin: 0;
+        font-size: 14px;
+    }
