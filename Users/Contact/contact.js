@@ -1,9 +1,9 @@
 let contactForm = document.getElementById("contactForm");
 contactForm.onsubmit = function(event) {
-    // Ngăn trang tải lại khi gửi form
+    // Ngăn trang tải lại khi gửi form, để trang không tải lại
     event.preventDefault();
     // Lấy phần tử thông báo
-    const successMessage = document.getElementById("successMessage");
+    let successMessage = document.getElementById("successMessage");
     // Hiển thị thông báo thành công
     successMessage.style.display = "block";
     successMessage.textContent = "Gửi tin nhắn thành công!";

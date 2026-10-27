@@ -66,8 +66,7 @@
         font-size: 14px;
     }
     
-    .navbar a:hover,
-    .navbar a.active {
+    .navbar a:hover {
         color: #0f8b8d;
     }
     
