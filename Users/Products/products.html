@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <!-- Cấu hình hiển thị tương thích trên các thiết bị di động -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách sản phẩm - WEB SHOP</title>
+    <!-- Thêm thư viện icon FontAwesome để sử dụng các biểu tượng giỏ hàng, sao đánh giá -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Liên kết file CSS riêng của trang sản phẩm -->
+    <link rel="stylesheet" href="products.css">
+</head>
+<body>
+
+    <header id="header">
+    <a href="../Home/home.html" class="logo-link">
+        <span class="logo-text">WEB SHOP</span>
+    </a>
+
+        <nav>
+            <ul class="navbar">
+                <li><a href="../Home/home.html">Home</a></li>
+                <li><a class="active" href="../Products/products.html">Products</a></li>
+                <li><a href="../About/about.html">About</a></li>
+                <li><a href="../Contact/contact.html">Contact</a></li>
+                <li>
+                    <a href="../Cart/cart.html">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                </li>
+                <!-- Khung tài khoản dùng chung -->
+                <li id="authMenu">
+                    <a href="../LogIn/login.html" class="btn-login">
+                        <i class="fa-solid fa-right-to-bracket"></i> Đăng nhập
+                    </a>
+                    <a href="../SignUp/signup.html" class="btn-signup">
+                        <i class="fa-solid fa-right-from-bracket"></i> Đăng ký
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+    <!-- ================= 2. KHU VỰC HIỂN THỊ DANH SÁCH SẢN PHẨM ================= -->
+    <section class="section-p1">
+        <div class="section-heading">
+            <h2>Tất cả sản phẩm</h2>
+            <p>Khám phá các sản phẩm chất lượng cao của chúng tôi</p>
+        </div>
+
+        <!-- Thẻ div này chứa danh sách sản phẩm được tạo tự động bằng JavaScript -->
+        <div class="pro-container" id="productContainer">
+            <!-- Dữ liệu sản phẩm sẽ được JavaScript tự động chèn vào đây -->
+        </div>
+    </section>
+
+    <script src="products.js"></script>
+</body>
+</html>

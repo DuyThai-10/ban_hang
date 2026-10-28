@@ -143,25 +143,49 @@
     </div>
 
     <script>
-        const form = document.getElementById("formDangKy");
-        const thongBao = document.getElementById("thongBao");
+    const form = document.getElementById("formDangKy");
+    const thongBao = document.getElementById("thongBao");
 
-        form.addEventListener("submit", function(event) {
-            event.preventDefault();
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
 
-            const matKhau = document.getElementById("matKhau").value;
-            const xacNhan = document.getElementById("xacNhanMatKhau").value;
+        const hoTen = document.getElementById("hoTen").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const tenDangNhap = document.getElementById("tenDangNhap").value.trim();
+        const matKhau = document.getElementById("matKhau").value;
+        const xacNhan = document.getElementById("xacNhanMatKhau").value;
 
-            if (matKhau !== xacNhan) {
-                thongBao.style.color = "red";
-                thongBao.textContent = "Mật khẩu xác nhận không khớp!";
-                return;
-            }
+        // 1. Kiểm tra mật khẩu khớp nhau
+        if (matKhau !== xacNhan) {
+            thongBao.style.color = "red";
+            thongBao.textContent = "Mật khẩu xác nhận không khớp!";
+            return;
+        }
 
-            thongBao.style.color = "#0D9295";
-            thongBao.textContent =
-                "Kiểm tra thành công! Trang đăng ký chưa kết nối cơ sở dữ liệu.";
-        });
-    </script>
+        // 2. Lấy danh sách tài khoản đã đăng ký trước đó (nếu có) từ localStorage
+        let userList = JSON.parse(localStorage.getItem("userList")) || [];
+
+        // 3. Kiểm tra xem tên đăng nhập hoặc email đã được dùng chưa
+        const existingUser = userList.find(u => u.tenDangNhap === tenDangNhap || u.email === email);
+        if (existingUser) {
+            thongBao.style.color = "red";
+            thongBao.textContent = "Tên đăng nhập hoặc Email này đã tồn tại!";
+            return;
+        }
+
+        // 4. Thêm tài khoản mới vào danh sách
+        const newUser = { hoTen, email, tenDangNhap, matKhau };
+        userList.push(newUser);
+        localStorage.setItem("userList", JSON.stringify(userList));
+
+        // 5. Thông báo thành công và chuyển hướng sang trang đăng nhập
+        thongBao.style.color = "#0D9295";
+        thongBao.textContent = "Đăng ký thành công! Đang chuyển hướng...";
+        
+        setTimeout(function() {
+            window.location.href = "../LogIn/login.html";
+        }, 1200);
+    });
+</script>
 </body>
 </html>
