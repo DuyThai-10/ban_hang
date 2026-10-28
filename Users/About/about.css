@@ -1,5 +1,5 @@
 /* ==========================================================================
-   1. RESET CƠ BẢN & CÀI ĐẶT CHUNG
+   1. CÀI ĐẶT CHUNG (RESET & BASE STYLES)
    ========================================================================== */
 
 * {
@@ -10,8 +10,8 @@
 }
 
 body {
-    background-color: #f5f6fa;
-    color: #2f3640;
+    background-color: #f5f6fa; /* Màu nền xám nhạt toàn trang */
+    color: #2f3640;            /* Màu chữ chính */
 }
 
 a {
@@ -23,163 +23,226 @@ ul {
     list-style: none;
 }
 
+/* Khoảng cách đệm chung cho các section nội dung */
 .section-p1 {
     padding: 40px 8%;
 }
 
-.section-heading {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
 
 /* ==========================================================================
-   2. HEADER (THANH MENU)
+   2. THANH MENU ĐẦU TRANG (HEADER & NAVBAR)
    ========================================================================== */
 
 #header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex;                 /* Dàn hàng ngang */
+    justify-content: space-between;/* Đẩy logo sang trái, menu sang phải */
+    align-items: center;           /* Căn giữa theo chiều dọc */
     padding: 15px 8%;
-    background-color: #ffffff;
+    background-color: #ffffff;     /* Nền trắng */
+    position: sticky;              /* Ghim cố định ở đầu trang khi cuộn */
     top: 0;
+    z-index: 1000;                 /* Luôn hiển thị nổi lên trên cùng */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Hiệu ứng bóng đổ nhẹ bên dưới */
 }
 
 .logo-text {
     font-size: 22px;
     font-weight: bold;
-    color: #0f8b8d;
-}
-
-.logo {
-    height: 35px;
-    width: auto;
-    object-fit: contain;
+    color: #0f8b8d;                /* Màu xanh thương hiệu */
 }
 
 .navbar {
     display: flex;
-    gap: 25px;
+    align-items: center;
+    gap: 25px;                     /* Khoảng cách giữa các mục menu */
 }
 
 .navbar a {
     font-weight: 600;
     font-size: 14px;
+    color: #2f3640;
+    transition: 0.2s;
 }
 
-.navbar a:hover,
-.navbar a.active {
+/* Hiệu ứng đổi màu khi rê chuột hoặc đang ở trang hiện tại (active) */
+.navbar a:hover, .navbar a.active {
     color: #0f8b8d;
-}
-
-.btn-login,
-.btn-signup {
-    align-items: center;
-    gap: 8px;
-    padding: 8px 14px;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-}
-
-.btn-login {
-    background-color: #0D9295;
-    color: white;
-}
-
-.btn-signup {
-    background-color: white;
-    color: #0D9295;
-    border: 1px solid #0D9295;
 }
 
 
 /* ==========================================================================
-   3. About
+   3. KHU VỰC TÀI KHOẢN & ĐĂNG XUẤT TRÊN THANH NAV (#authMenu)
    ========================================================================== */
 
-
-/* ABOUT */
-
-.about {
-    padding: 50px 8%;
-    background-color: #ffffff;
-    text-align: left;
+#authMenu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.about h1 {
+/* Định dạng nút Đăng nhập & Đăng ký */
+.btn-login, .btn-signup {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2f3640;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+
+.btn-login:hover, .btn-signup:hover {
     color: #0f8b8d;
-    font-size: 32px;
+}
+
+/* Định dạng khi đã đăng nhập (Hiển thị tên người dùng và nút Đăng xuất) */
+#authMenu div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#authMenu span {
+    font-weight: bold;
+    color: #0f8b8d;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+#btnDangXuat {
+    background-color: #e74c3c; /* Màu đỏ nổi bật cho nút đăng xuất */
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 13px;
+    transition: 0.2s;
+}
+
+#btnDangXuat:hover {
+    background-color: #c0392b; /* Đổi sang màu đỏ đậm khi rê chuột vào */
+}
+
+
+/* BANNER TRANG ABOUT */
+#about-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1600') center/cover no-repeat;
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+#about-header h2 {
+    font-size: 40px;
+    font-weight: bold;
     margin-bottom: 10px;
 }
 
-.about h2 {
-    color: #0f8b8d;
-    font-size: 22px;
-    margin: 25px 0 10px;
-}
-
-.about p {
-    color: #555555;
+#about-header p {
     font-size: 16px;
-    line-height: 1.8;
-    margin-bottom: 15px;
-    max-width: 850px;
+    color: #f1f5f9;
 }
 
-
-/* ẢNH CỬA HÀNG */
-
-.about img {
-    display: block;
-    width: 100%;
-    max-width: 750px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin: 25px 0;
-}
-
-
-/* ĐIỆN THOẠI */
-
-@media (max-width: 600px) {
-    .about {
-        padding: 30px 5%;
-    }
-    .about h1 {
-        font-size: 27px;
-    }
-    .about img {
-        height: 220px;
-    }
-}
-
-footer {
+/* PHẦN CHIA 2 CỘT (HÌNH ẢNH & NỘI DUNG) */
+#about-head {
+    display: flex;
+    align-items: center;
+    gap: 50px;
     background: #ffffff;
+    margin: 30px 8%;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+}
+
+#about-head img {
+    width: 50%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+#about-head .about-details {
+    width: 50%;
+}
+
+#about-head .about-details h2 {
+    font-size: 28px;
+    color: #0f8b8d;
+    margin-bottom: 15px;
+}
+
+#about-head .about-details p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+#about-head abbr {
+    font-weight: 600;
+    color: #333;
+    background: #e8f3f1;
+    padding: 8px 12px;
+    display: inline-block;
+    border-radius: 4px;
+    border-left: 4px solid #0f8b8d;
+}
+
+/* KHỐI THỐNG KÊ (STAT BOXES) */
+#about-app {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
     gap: 20px;
-    border-top: 1px solid #e1e8ef;
+    margin: 0 8% 40px 8%;
 }
 
-.footer-col {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+.stat-box {
+    background: #ffffff;
+    flex: 1;
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 10px;
+    
+    
 }
 
-.footer-logo {
+
+
+.stat-box i {
+    font-size: 35px;
     color: #0f8b8d;
+    margin-bottom: 15px;
+}
+
+.stat-box h3 {
+    font-size: 24px;
+    color: #2f3640;
+    margin-bottom: 5px;
+}
+
+.stat-box p {
+    font-size: 14px;
+    color: #777;
+}
+
+/* FOOTER */
+footer {
+    background: #ffffff;
+    border-top: 1px solid #e1e8ef;
+    text-align: center;
+    padding: 20px 8%;
 }
 
 .copyright {
-    width: 100%;
-    text-align: center;
-    margin-top: 20px;
-    padding-top: 15px;
-    border-top: 1px solid #eee;
     color: #777;
+    font-size: 14px;
 }

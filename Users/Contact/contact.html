@@ -1,40 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>WEB SHOP</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="contact.css">
+    <link href="contact.css" rel="stylesheet">
 </head>
-
 <body>
-    <!-- ================= 1. HEADER ================= -->
     <header id="header">
-        <a href="#" class="logo-link">
-            <img src="img/logo.jpg" class="logo" alt="Logo">
-            <span class="logo-text">WEB SHOP</span>
-        </a>
+    <a href="../Home/home.html" class="logo-link">
+        <span class="logo-text">WEB SHOP</span>
+    </a>
 
         <nav>
             <ul class="navbar">
                 <li><a href="../Home/home.html">Home</a></li>
                 <li><a href="../Products/products.html">Products</a></li>
                 <li><a href="../About/about.html">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-
+                <li><a class="active" href="../Contact/contact.html">Contact</a></li>
                 <li>
-                    <a href="#">
+                    <a href="../Cart/cart.html">
                         <i class="fa-solid fa-cart-shopping"></i>
                     </a>
                 </li>
-                <li>
+                <!-- Khung tài khoản dùng chung -->
+                <li id="authMenu">
                     <a href="../LogIn/login.html" class="btn-login">
                         <i class="fa-solid fa-right-to-bracket"></i> Đăng nhập
                     </a>
-                </li>
-                <li>
                     <a href="../SignUp/signup.html" class="btn-signup">
                         <i class="fa-solid fa-right-from-bracket"></i> Đăng ký
                     </a>
@@ -43,93 +37,61 @@
         </nav>
     </header>
 
-    <!-- CONTACT -->
-    <section id="contact" class="contact-section">
-
-        <div class="contact-heading">
-            <h2>Contact Us</h2>
-            <p>Bạn cần hỗ trợ? Hãy liên hệ với chúng tôi!</p>
-        </div>
-
-        <div class="contact-container">
-
-            <!-- THÔNG TIN LIÊN HỆ -->
-            <div class="contact-info">
-
-                <h3>Thông tin liên hệ</h3>
-
-                <div class="contact-item">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <div>
-                        <h4>Địa chỉ</h4>
-                        <p>123 Đường ABC, Quận 1, TP.HCM</p>
-                    </div>
-                </div>
-
-                <div class="contact-item">
-                    <i class="fa-solid fa-phone"></i>
-                    <div>
-                        <h4>Điện thoại</h4>
-                        <p>+84 901 234 567</p>
-                    </div>
-                </div>
-
-                <div class="contact-item">
-                    <i class="fa-solid fa-envelope"></i>
-                    <div>
-                        <h4>Email</h4>
-                        <p>support@webshop.com</p>
-                    </div>
-                </div>
-
-                <div class="contact-item">
-                    <i class="fa-solid fa-clock"></i>
-                    <div>
-                        <h4>Giờ làm việc</h4>
-                        <p>08:00 - 22:00, Thứ 2 - Chủ nhật</p>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- FORM GỬI TIN NHẮN -->
-            <div class="contact-form">
-
-                <h3>Gửi tin nhắn cho chúng tôi</h3>
-
-                <form id="contactForm" action="#" method="post">
-
-                    <label for="name">Họ và tên</label>
-                    <input type="text" id="name" name="name" placeholder="Nhập họ và tên của bạn" required>
-
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Nhập email của bạn" required>
-
-                    <label for="phone">Số điện thoại</label>
-                    <input type="tel" id="phone" name="phone" placeholder="Nhập số điện thoại">
-
-                    <label for="message">Nội dung</label>
-                    <textarea id="message" name="message" rows="5" placeholder="Nhập nội dung cần hỗ trợ..." required></textarea>
-
-                    <button type="submit" class="contact-button">
-                    <i class="fa-solid fa-paper-plane"></i>
-                    Gửi tin nhắn
-                </button>
-
-                </form>
-                <p id="successMessage" style="display: none; color: green; font-weight: bold;">
-                    Gửi tin nhắn thành công!
-                </p>
-            </div>
-
-        </div>
-
+    <!-- BANNER TIÊU ĐỀ -->
+    <section id="contact-header">
+        <h2>#Let's_Talk</h2>
+        <p>Để lại lời nhắn, chúng tôi sẽ phản hồi bạn trong thời gian sớm nhất!</p>
     </section>
-    <!-- FOOTER -->
-    <footer id="footer">
-        <p>© 2026 WEB SHOP. All rights reserved.</p>
+
+    <!-- NỘI DUNG THÔNG TIN LIÊN HỆ -->
+    <section id="contact-details" class="section-p1">
+        <div class="details">
+            <span>THÔNG TIN LIÊN HỆ</span>
+            <h2>Ghé thăm cửa hàng của chúng tôi hoặc liên hệ trực tiếp</h2>
+            <h3>Trụ sở chính</h3>
+            <div>
+                <li>
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    <p>123 Đường ABC, Quận 1, TP. Hồ Chí Minh</p>
+                </li>
+                <li>
+                    <i class="fa-solid fa-envelope"></i>
+                    <p>support@webshop.com</p>
+                </li>
+                <li>
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <p>+84 901 234 567</p>
+                </li>
+                <li>
+                    <i class="fa-solid fa-clock"></i>
+                    <p>Thứ Hai - Chủ Nhật: 08:00 - 22:00</p>
+                </li>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORM GỬI TIN NHẮN -->
+<section id="form-details" class="section-p1">
+    <form onsubmit="event.preventDefault(); alert('Gửi tin nhắn thành công!'); this.reset();">
+        <span>GỬI PHẢN HỒI CHO CHÚNG TÔI</span>
+        <h2>Chúng tôi luôn lắng nghe ý kiến từ bạn</h2>
+        <input type="text" placeholder="Họ và tên của bạn" required>
+        <input type="email" placeholder="Email của bạn" required>
+        <input type="text" placeholder="Tiêu đề / Chủ đề">
+        <textarea placeholder="Nội dung chi tiết..." cols="30" rows="10" required></textarea>
+        <button type="submit" class="normal">Gửi tin nhắn</button>
+    </form>
+</section>
+
+    <!-- FOOTER CHUNG -->
+    <footer class="section-p1">
+        <div class="copyright">
+            <p>© 2026 Web Bán Hàng. All rights reserved.</p>
+        </div>
     </footer>
+
+
+
     <script src="contact.js"></script>
 </body>
-
 </html>

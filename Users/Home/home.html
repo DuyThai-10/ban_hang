@@ -3,48 +3,50 @@
 
 <head>
     <meta charset="UTF-8">
+    <!-- Cấu hình responsive cho thiết bị di động -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Bán Hàng</title>
+    <!-- Thư viện FontAwesome để hiển thị các icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Liên kết đến file CSS giao diện trang chủ -->
     <link rel="stylesheet" href="home.css">
 </head>
 
 <body>
 
-    <!-- ================= 1. HEADER ================= -->
     <header id="header">
-        <a href="#" class="logo-link">
-            <img src="img/logo.jpg" class="logo" alt="Logo">
-            <span class="logo-text">WEB SHOP</span>
-        </a>
+    <a href="../Home/home.html" class="logo-link">
+        <span class="logo-text">WEB SHOP</span>
+    </a>
 
-        <nav>
-            <ul class="navbar">
-                <li><a class="active" href="home.html">Home</a></li>
-                <li><a href="../Products/products.html">Products</a></li>
-                <li><a href="../About/about.html">About</a></li>
-                <li><a href="../Contact/contact.html">Contact</a></li>
+    <nav>
+        <ul class="navbar">
+            <li><a class="active" href="home.html">Home</a></li>
+            <li><a href="../Products/products.html">Products</a></li>
+            <li><a href="../About/about.html">About</a></li>
+            <li><a href="../Contact/contact.html">Contact</a></li>
+            <li>
+                <a href="../Cart/cart.html">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </a>
+            </li>
+            <!-- Khung tài khoản dùng chung -->
+            <li id="authMenu">
+                <a href="../LogIn/login.html" class="btn-login">
+                    <i class="fa-solid fa-right-to-bracket"></i> Đăng nhập
+                </a>
+                <a href="../SignUp/signup.html" class="btn-signup">
+                    <i class="fa-solid fa-right-from-bracket"></i> Đăng ký
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+    
 
-                <li>
-                    <a href="#">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="../LogIn/login.html" class="btn-login">
-                        <i class="fa-solid fa-right-to-bracket"></i> Đăng nhập
-                    </a>
-                </li>
-                <li>
-                    <a href="../SignUp/signup.html" class="btn-signup">
-                        <i class="fa-solid fa-right-from-bracket"></i> Đăng ký
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
 
-    <!-- ================= 2. BANNER (HERO) ================= -->
+
+    <!-- ================= 2. BANNER (HERO SECTION) ================= -->
     <section id="hero">
         <div class="hero-content">
             <h4>Ưu đãi siêu giá trị</h4>
@@ -55,7 +57,7 @@
         </div>
     </section>
 
-    <!-- ================= 3. DỊCH VỤ ================= -->
+    <!-- ================= 3. KHỐI DỊCH VỤ / CHÍNH SÁCH ================= -->
     <section id="feature" class="section-p1">
         <a href="../Service Benefits/ShippingPolicy.html" class="fe-box">
             <i class="fa-solid fa-truck-fast"></i>
@@ -68,10 +70,11 @@
         <a href="../Service Benefits/CustomerService.html" class="fe-box">
             <i class="fa-solid fa-headset"></i>
             <h3>Hỗ trợ 24/7</h3>
-            <a href="../Service Benefits/PaymentSecurity.html" class="fe-box">
-                <i class="fa-solid fa-shield-halved"></i>
-                <h3>Thanh toán an toàn</h3>
-            </a>
+        </a>
+        <a href="../Service Benefits/PaymentSecurity.html" class="fe-box">
+            <i class="fa-solid fa-shield-halved"></i>
+            <h3>Thanh toán an toàn</h3>
+        </a>
     </section>
 
     <!-- ================= 4. DANH SÁCH SẢN PHẨM ================= -->
@@ -164,13 +167,13 @@
         </div>
     </section>
 
-    <!-- ================= 5. GIỚI THIỆU ================= -->
+    <!-- ================= 5. KHU VỰC GIỚI THIỆU NHỎ ================= -->
     <section id="about" class="about-section">
         <h2>Mua sắm dễ dàng mỗi ngày</h2>
         <p>Khám phá sản phẩm yêu thích với mức giá phù hợp và dịch vụ tận tâm.</p>
     </section>
 
-    <!-- ================= 6. FOOTER ================= -->
+    <!-- ================= 6. CHÂN TRANG (FOOTER) ================= -->
     <footer id="contact" class="section-p1">
         <div class="footer-col">
             <h2 class="footer-logo">WEB SHOP</h2>
@@ -189,7 +192,7 @@
 
         <div class="footer-col">
             <h3>Tài khoản</h3>
-            <a href="#contact">Đăng nhập</a>
+            <a href="../LogIn/login.html">Đăng nhập</a>
             <a href="#product1">Xem sản phẩm</a>
             <a href="#product1">Sản phẩm yêu thích</a>
             <a href="#contact">Theo dõi đơn hàng</a>
@@ -200,6 +203,8 @@
         </div>
     </footer>
 
+    
+    <script src="home.js"></script>
 </body>
 
 </html>
