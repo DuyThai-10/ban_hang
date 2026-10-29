@@ -1,0 +1,106 @@
+<!DOCTYPE html> 
+<html lang="vi"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Giỏ hàng - WEB SHOP</title> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body> 
+    <!-- THANH NAV CHUNG -->
+    <header id="header">
+        <a href="../Home/home.html" class="logo-link">
+            <span class="logo-text">WEB SHOP</span>
+        </a>
+
+        <!-- Khung chứa các menu chuyển trang -->
+        <nav>
+            <ul class="navbar">
+                <li><a href="../Home/home.html">Trang Chủ</a></li> <!-- Link về trang chủ -->
+                <li><a href="../Products/products.html">Sản Phẩm</a></li> <!-- Link sang trang sản phẩm -->
+                <li><a href="../About/about.html">Giới Thiệu</a></li> <!-- Link sang trang giới thiệu -->
+                <li><a href="../Contact/contact.html">Liên Lạc</a></li> <!-- Link sang trang liên hệ -->
+                <li>
+                    
+                    <a class="active" href="cart.html">
+                        <i class="fa-solid fa-cart-shopping"></i> 
+                    </a>
+                </li>
+                
+                <!-- Khung tài khoản đăng nhập/đăng ký -->
+                <li id="authMenu">
+                    <a href="../LogIn/login.html" class="btn-login">
+                        <i class="fa-solid fa-right-to-bracket"></i> Đăng nhập
+                    </a>
+                    <a href="../SignUp/signup.html" class="btn-signup">
+                        <i class="fa-solid fa-right-from-bracket"></i> Đăng ký
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- BANNER TIÊU ĐỀ TRANG GIỎ HÀNG -->
+    <section id="cart-header">
+        <h2>#cart</h2> <!-- Tiêu đề lớn hiển thị trên banner -->
+        <p>Kiểm tra lại các sản phẩm bạn đã chọn trước khi thanh toán!</p> <!-- Lời nhắn nhỏ cho khách -->
+    </section>
+
+    <!-- BẢNG DANH SÁCH SẢN PHẨM TRONG GIỎ HÀNG -->
+    <section id="cart" class="section-p1">
+        <table id="cartTable" width="100%">
+            <!-- Phần đầu của bảng (Tiêu đề các cột) -->
+            <thead>
+                <tr>
+                    <td>Xóa</td>        
+                    <td>Hình ảnh</td>   
+                    <td>Sản phẩm</td>   
+                    <td>Giá</td>        
+                    <td>Số lượng</td>   
+                    <td>Tổng tiền</td>  
+                </tr>
+            </thead>
+            
+            <tbody id="cart-items">
+                
+            </tbody>
+        </table>
+    </section>
+
+    <!-- KHUNG TỔNG KẾT THANH TOÁN (Nằm ở góc phải dưới bảng) -->
+    <!-- <section id="cart-add" class="section-p1"> -->
+        <!-- <div id="subtotal"> -->
+            <!-- <h3>Cộng giỏ hàng</h3> -->
+            <!-- <table>
+                <tr>
+                    <td>Tổng tiền hàng</td>
+                    <td id="cartSubtotal">0 VNĐ</td> <!-- Thẻ này có id để JS tự động điền tổng số tiền hàng vào -->
+                <!-- </tr> -->
+                <!-- <tr> -->
+                    <td>Vận chuyển</td>
+                    <!-- <td>Miễn phí</td> Phí ship cố định -->
+                <!-- </tr> -->
+                <!-- <tr> -->
+                    <!-- <td><strong>Tổng cộng</strong></td>
+                    <td><strong id="cartTotal">0 VNĐ</strong></td> Thẻ hiển thị tổng tiền cuối cùng phải trả -->
+                <!-- </tr> -->
+            <!-- </table> -->
+            <!-- Nút bấm tiến hành thanh toán (tạm thời để thông báo) -->
+            <!-- <button class="normal" onclick="alert('Chức năng thanh toán đang được phát triển!')">Tiến hành thanh toán</button> -->
+        <!-- </div> -->
+    <!-- </section>  -->
+
+    <!-- FOOTER CHUNG (Chân trang website) -->
+    <footer class="section-p1">
+        <div class="copyright">
+            <p>© 2026 Web Bán Hàng. All rights reserved.</p> <!-- Thông tin bản quyền -->
+        </div>
+    </footer>
+
+    <!-- 1. Nhúng file JavaScript chuyên xử lý logic giỏ hàng (cart.js) -->
+    <script src="cart.js"></script>
+
+    
+</body>
+</html>
