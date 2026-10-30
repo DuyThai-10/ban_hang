@@ -79,33 +79,40 @@
 
     
     <!-- ================= 4. DANH SÁCH SẢN PHẨM ================= -->
+    <!-- KHU VỰC HIỂN THỊ SẢN PHẨM NỔI BẬT (Đổ dữ liệu động bằng JavaScript) -->
     <section id="product1" class="section-p1">
-        <div class="section-heading">
+        <div class="section-heading" style="text-align: center; margin-bottom: 30px;">
             <h2>Sản phẩm nổi bật</h2>
-            <p>Bộ sưu tập thiết kế hiện đại mùa hè</p>
+            <p>Bộ sưu tập thời trang thịnh hành nhất</p>
         </div>
 
+        <!-- Khung chứa 4 sản phẩm render từ localStorage -->
         <div class="pro-container" id="home-product-container">
-            <!-- JavaScript tự động render các sản phẩm có ID vào đây -->
+            <!-- Dữ liệu sản phẩm sẽ được JavaScript tự động chèn vào đây -->
         </div>
     </section>
-    
 
-    <!-- BANNER LOOKBOOK NGƯỜI MẪU THỜI TRANG -->
+    <!-- BANNER LOOKBOOK NGƯỜI MẪU THỜI TRANG (Nằm ngay dưới 4 sản phẩm) -->
     <section id="banner-nguoi-mau" class="section-p1">
-        <div class="banner-box">
-            <h4>BỘ SƯU TẬP MỚI</h4>
-            <h2>Xu hướng thời trang 2026</h2>
-            <span>Khám phá phong cách cá tính cùng những thiết kế mới nhất của chúng tôi.</span>
-            <button class="normal" onclick="window.location.href='../Products/products.html'">Xem Ngay</button>
+        <div class="banner-container">
+            <!-- Ảnh người mẫu bên trái (dáng đứng dọc cao ráo) -->
+            <div class="banner-box" style="background-image: url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800');">
+                <div class="banner-content">
+                    <h4>XU HƯỚNG MỚI</h4>
+                    <h2>Phong cách năng động</h2>
+                </div>
+            </div>
+
+            <!-- Ảnh người mẫu bên phải (dáng đứng dọc thời trang) -->
+            <div class="banner-box" style="background-image: url('https://images.unsplash.com/photo-1509631179647-0177331693ae?w=800');">
+                <div class="banner-content">
+                    <h4>BỘ SƯU TẬP 2026</h4>
+                    <h2>Thanh lịch & Tinh tế</h2>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- GIỚI THIỆU NHỎ -->
-    <section id="about" class="about-section">
-        <h2>Mua sắm dễ dàng mỗi ngày</h2>
-        <p>Khám phá sản phẩm yêu thích với mức giá phù hợp và dịch vụ tận tâm.</p>
-    </section>
 
     <!-- ================= 6. CHÂN TRANG (FOOTER) ================= -->
     <footer id="contact" class="section-p1">
