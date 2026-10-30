@@ -43,6 +43,7 @@
 
     <!-- BANNER TIÊU ĐỀ TRANG GIỎ HÀNG -->
     <section id="cart-header">
+        My Cart
         <br>
         
     </section>
@@ -68,32 +69,30 @@
         </table>
     </section>
 
-    <!-- KHUNG TỔNG KẾT THANH TOÁN (Nằm ở góc phải dưới bảng) -->
-    <!-- <section id="cart-add" class="section-p1"> -->
-        <!-- <div id="subtotal"> -->
-            <!-- <h3>Cộng giỏ hàng</h3> -->
-            <!-- <table>
-                <tr>
-                    <td>Tổng tiền hàng</td>
-                    <td id="cartSubtotal">0 VNĐ</td> <!-- Thẻ này có id để JS tự động điền tổng số tiền hàng vào -->
-                <!-- </tr> -->
-                <!-- <tr> -->
-                    <!-- <td>Vận chuyển</td> -->
-                    <!-- <td>Miễn phí</td> Phí ship cố định -->
-                <!-- </tr> -->
-                <!-- <tr> -->
-                    <!-- <td><strong>Tổng cộng</strong></td>
-                    <td><strong id="cartTotal">0 VNĐ</strong></td> Thẻ hiển thị tổng tiền cuối cùng phải trả -->
-                <!-- </tr> -->
-            <!-- </table> -->
-            <!-- Nút bấm tiến hành thanh toán (tạm thời để thông báo) -->
-            <!-- <button class="normal" onclick="alert('Chức năng thanh toán đang được phát triển!')">Tiến hành thanh toán</button> -->
-        <!-- </div> -->
-    <!-- </section>  -->
+    <!-- KHUNG TỔNG KẾT THANH TOÁN -->
+<section id="cart-add" class="section-p1">
+    <div id="subtotal">
+        <h3>Cộng giỏ hàng</h3>
+        <table>
+            <tr>
+                <td>Tổng tiền hàng</td>
+                <td id="cartSubtotal">0đ</td>
+            </tr>
+            <tr>
+                <td>Vận chuyển</td>
+                <td>Miễn phí</td>
+            </tr>
+            <tr>
+                <td><strong>Tổng cộng</strong></td>
+                <td><strong id="cartTotal">0đ</strong></td>
+            </tr>
+        </table>
+        <button class="normal" onclick="alert('Chức năng thanh toán đang được phát triển!')">Tiến hành thanh toán</button>
+    </div>
+</section>
 
     
 
-    <!-- 1. Nhúng file JavaScript chuyên xử lý logic giỏ hàng (cart.js) -->
     <script src="cart.js"></script>
 
     
