@@ -1,0 +1,163 @@
+/* ==========================================
+   CSS TRANG THEO DÕI / LỊCH SỬ ĐƠN HÀNG
+   ========================================== */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Khung chứa chính căn giữa */
+.orders-container {
+    max-width: 850px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+/* Phần tiêu đề đầu trang */
+.orders-header {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.orders-header h2 {
+    color: #0D9295;
+    font-size: 26px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.orders-header p {
+    color: #666;
+    font-size: 15px;
+    margin: 0;
+}
+
+/* Khung bọc từng đơn hàng độc lập (Card) */
+.order-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s ease;
+}
+
+.order-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(13, 146, 149, 0.08);
+    border-color: #0D9295;
+}
+
+/* Tiêu đề mã đơn hàng trong card */
+.order-card h3 {
+    color: #0D9295;
+    margin: 0;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Các đoạn thông tin chi tiết */
+.order-card p {
+    margin: 8px 0;
+    font-size: 14px;
+    color: #4a5568;
+}
+
+/* Nhãn trạng thái đơn hàng */
+.order-status {
+    color: #d97706;
+    font-weight: bold;
+    background: #fef3c7;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 13px;
+    display: inline-block;
+}
+
+/* Khu vực danh sách sản phẩm trong đơn */
+.order-items-box {
+    margin: 15px 0;
+    border-top: 1px dashed #cbd5e1;
+    border-bottom: 1px dashed #cbd5e1;
+    padding: 12px 0;
+}
+
+.order-items-box strong {
+    color: #2d3748;
+    font-size: 14px;
+}
+
+.order-items-box ul {
+    padding-left: 20px;
+    margin: 8px 0 0 0;
+}
+
+.order-items-box li {
+    font-size: 14px;
+    color: #475569;
+    margin-bottom: 6px;
+}
+
+/* Tổng tiền thanh toán */
+.order-total {
+    font-size: 16px;
+    margin-top: 15px;
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Giao diện khi chưa có đơn hàng nào */
+.empty-orders {
+    text-align: center;
+    padding: 50px 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.empty-orders p {
+    font-size: 16px;
+    color: #64748b;
+    margin: 15px 0;
+}
+
+/* Nút quay về trang chủ */
+.back-home {
+    margin-top: 30px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.back-home a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #0D9295;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background-color 0.2s, transform 0.2s;
+    box-shadow: 0 4px 10px rgba(13, 146, 149, 0.2);
+}
+
+.back-home a:hover {
+    background-color: #097274;
+    transform: translateY(-2px);
+}
