@@ -15,18 +15,12 @@
 <body>
 
     <header id="header">
-
-        <a href="../Home/home.html" class="logo-link">
-            <span class="logo-text">WEB SHOP</span>
-        </a>
-
-
         <nav>
             <ul class="navbar">
-                <li><a class="active" href="home.html">Home</a></li>
-                <li><a href="../Products/products.html">Products</a></li>
-                <li><a href="../About/about.html">About</a></li>
-                <li><a href="../Contact/contact.html">Contact</a></li>
+                <li><a class="active" href="home.html">Trang Chủ</a></li>
+                <li><a href="../Products/products.html">Sản Phẩm</a></li>
+                <li><a href="../About/about.html">Giới Thiệu</a></li>
+                <li><a href="../Contact/contact.html">Liên Lạc</a></li>
                 <li>
                     <a href="../Cart/cart.html">
                         <i class="fa-solid fa-cart-shopping"></i>
@@ -44,9 +38,6 @@
             </ul>
         </nav>
     </header>
-
-
-
 
     <!-- ================= 2. BANNER (HERO SECTION) ================= -->
     <section id="hero">
@@ -79,101 +70,42 @@
         </a>
     </section>
 
+
     <!-- ================= 4. DANH SÁCH SẢN PHẨM ================= -->
+    <!-- KHU VỰC HIỂN THỊ SẢN PHẨM NỔI BẬT (Đổ dữ liệu động bằng JavaScript) -->
     <section id="product1" class="section-p1">
-        <div class="section-heading">
+        <div class="section-heading" style="text-align: center; margin-bottom: 30px;">
             <h2>Sản phẩm nổi bật</h2>
-            <p>Bộ sưu tập thiết kế hiện đại mùa hè</p>
+            <p>Bộ sưu tập thời trang thịnh hành nhất</p>
         </div>
 
-        <div class="pro-container">
-            <!-- SẢN PHẨM 1 -->
-            <div class="pro">
-                <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600" alt="Áo thun">
-                <div class="des">
-                    <span>Adidas</span>
-                    <h3>Áo thun Cotton Premium</h3>
-                    <div class="star">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <h4>350.000đ</h4>
+        <!-- Khung chứa 4 sản phẩm render từ localStorage -->
+        <div class="pro-container" id="home-product-container">
+            <!-- Dữ liệu sản phẩm sẽ được JavaScript tự động chèn vào đây -->
+        </div>
+    </section>
+
+    <!-- BANNER LOOKBOOK NGƯỜI MẪU THỜI TRANG (Nằm ngay dưới 4 sản phẩm) -->
+    <section id="banner-nguoi-mau" class="section-p1">
+        <div class="banner-container">
+            <!-- Ảnh người mẫu bên trái (dáng đứng dọc cao ráo) -->
+            <div class="banner-box" style="background-image: url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800');">
+                <div class="banner-content">
+                    <h4>XU HƯỚNG MỚI</h4>
+                    <h2>Phong cách năng động</h2>
                 </div>
-                <a href="#product1" class="cart-btn">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </a>
             </div>
 
-            <!-- SẢN PHẨM 2 -->
-            <div class="pro">
-                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600" alt="Giày thể thao">
-                <div class="des">
-                    <span>Nike</span>
-                    <h3>Giày Sneaker Đỏ Nổi Bật</h3>
-                    <div class="star">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <h4>1.250.000đ</h4>
+            <!-- Ảnh người mẫu bên phải (dáng đứng dọc thời trang) -->
+            <div class="banner-box" style="background-image: url('https://images.unsplash.com/photo-1509631179647-0177331693ae?w=800');">
+                <div class="banner-content">
+                    <h4>BỘ SƯU TẬP 2026</h4>
+                    <h2>Thanh lịch & Tinh tế</h2>
                 </div>
-                <a href="#product1" class="cart-btn">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </a>
-            </div>
-
-            <!-- SẢN PHẨM 3 -->
-            <div class="pro">
-                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600" alt="Đồng hồ">
-                <div class="des">
-                    <span>Casio</span>
-                    <h3>Đồng hồ thông minh Unisex</h3>
-                    <div class="star">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <h4>890.000đ</h4>
-                </div>
-                <a href="#product1" class="cart-btn">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </a>
-            </div>
-
-            <!-- SẢN PHẨM 4 -->
-            <div class="pro">
-                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600" alt="Tai nghe">
-                <div class="des">
-                    <span>Sony</span>
-                    <h3>Tai nghe chống ồn Wireless</h3>
-                    <div class="star">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <h4>1.500.000đ</h4>
-                </div>
-                <a href="#product1" class="cart-btn">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </a>
             </div>
         </div>
     </section>
 
-    <!-- ================= 5. KHU VỰC GIỚI THIỆU NHỎ ================= -->
-    <section id="about" class="about-section">
-        <h2>Mua sắm dễ dàng mỗi ngày</h2>
-        <p>Khám phá sản phẩm yêu thích với mức giá phù hợp và dịch vụ tận tâm.</p>
-    </section>
 
     <!-- ================= 6. CHÂN TRANG (FOOTER) ================= -->
     <footer id="contact" class="section-p1">
@@ -197,7 +129,8 @@
             <a href="../LogIn/login.html">Đăng nhập</a>
             <a href="#product1">Xem sản phẩm</a>
             <a href="#product1">Sản phẩm yêu thích</a>
-            <a href="#contact">Theo dõi đơn hàng</a>
+            <!-- Sửa dòng "Theo dõi đơn hàng" ở phần footer trong trang home.html thành thế này: -->
+            <a href="../Orders/orders.html">Theo dõi đơn hàng</a>
         </div>
 
         <div class="copyright">
