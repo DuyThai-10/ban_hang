@@ -133,7 +133,7 @@ ul {
 
 .pro-container {
     display: flex;                 /* Dàn các sản phẩm nằm ngang */
-    justify-content: center;       /* Căn giữa các sản phẩm */
+    justify-content: flex-start;   /* Căn bên trái các sản phẩm */
     gap: 20px;                     /* Khoảng cách giữa các ô sản phẩm */
     flex-wrap: wrap;               /* Tự động xuống dòng khi hết màn hình */
 }
