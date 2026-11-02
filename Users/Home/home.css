@@ -211,10 +211,13 @@ ul {
 }
 
 
-/* ==========================================================================
-   5. KHỐI SẢN PHẨM (PRODUCT CARDS)
-   ========================================================================== */
 
+
+
+
+   /* ==========================================================================
+   5. KHU VỰC SẢN PHẨM & HIỆU ỨNG HOVER NÚT CART (ĐỒNG BỘ PRODUCTS)
+   ========================================================================== */
 .pro-container {
     display: flex;
     justify-content: center;
@@ -229,6 +232,12 @@ ul {
     padding: 15px;
     width: 230px;
     position: relative;
+    transition: 0.3s ease;
+}
+
+.pro:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transform: translateY(-3px);
 }
 
 .pro img {
@@ -250,6 +259,7 @@ ul {
 .pro .des h3 {
     font-size: 15px;
     margin: 5px 0;
+    color: #2f3640;
 }
 
 .pro .star {
@@ -263,6 +273,7 @@ ul {
     margin-top: 5px;
 }
 
+/* Nút thêm vào giỏ hàng có hiệu ứng sáng màu khi hover */
 .cart-btn {
     position: absolute;
     bottom: 15px;
@@ -275,11 +286,84 @@ ul {
     display: flex;
     align-items: center;
     justify-content: center;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
 }
 
+.cart-btn:hover {
+    background: #0f8b8d;
+    color: #ffffff;
+}
 
 /* ==========================================================================
-   6. GIỚI THIỆU & FOOTER
+   6. BANNER LOOKBOOK NGƯỜI MẪU THỜI TRANG (NẰM DƯỚI 4 SẢN PHẨM)
+   ========================================================================== */
+
+   #banner-nguoi-mau {
+    padding: 20px 8%;
+    margin: 40px 0;
+}
+
+#banner-nguoi-mau .banner-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+#banner-nguoi-mau .banner-box {
+    flex: 1;
+    min-width: 300px;
+    height: 50vh; /* Tăng chiều cao lên để khung ảnh dài và đẹp hơn */
+    background-size: cover;
+    background-position: center top; /* Canh phần trên của ảnh để thấy rõ người mẫu */
+    border-radius: 12px;
+    display: flex;
+    align-items: flex-end; /* Căn chữ xuống góc dưới */
+    padding: 35px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+/* Hiệu ứng phóng nhẹ khung hình khi rê chuột vào từng ảnh */
+#banner-nguoi-mau .banner-box:hover {
+    transform: translateY(-5px);
+}
+
+/* Lớp phủ tối mờ tinh tế để làm nổi bật phần chữ trắng bên dưới */
+#banner-nguoi-mau .banner-box::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.65), transparent 60%);
+    z-index: 1;
+}
+
+#banner-nguoi-mau .banner-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+}
+
+#banner-nguoi-mau .banner-content h4 {
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #e8f3f1;
+}
+
+#banner-nguoi-mau .banner-content h2 {
+    font-size: 26px;
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   7. GIỚI THIỆU & FOOTER
    ========================================================================== */
 
 .about-section {

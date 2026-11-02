@@ -1,5 +1,5 @@
 
-        // Thay vì khai báo mảng cứng, ta lấy từ localStorage (nếu chưa có thì tạo mới 12 sản phẩm mẫu)
+
         let danhSachSanPham = JSON.parse(localStorage.getItem("danhSachSanPham"));
 
         if (!danhSachSanPham) {
@@ -112,12 +112,12 @@
         function hienThiSanPham() {
             let htmlContent = ""; // Biến lưu chuỗi HTML sẽ tạo ra
 
-            // Dùng vòng lặp duyệt qua từng sản phẩm trong mảng danhSachSanPham ở trên
+            
             danhSachSanPham.forEach(sp => {
                 // Định dạng lại giá tiền có dấu chấm phân cách (Ví dụ: 350000 thành 350.000đ)
                 let giaFormatted = sp.price.toLocaleString('vi-VN') + "đ";
 
-                // Ghép từng khối HTML cho mỗi sản phẩm
+                
                 htmlContent += `
                     <div class="pro">
                         <img src="${sp.image}" alt="${sp.name}">
@@ -145,7 +145,7 @@
             container.innerHTML = htmlContent;
         }
 
-        // Bước 4: Viết hàm xử lý khi người dùng bấm nút "Thêm vào giỏ hàng"
+        //  Viết hàm xử lý khi người dùng bấm nút "Thêm vào giỏ hàng"
         function themVaoGioHang(idSanPham) {
             // Kiểm tra xem người dùng đã đăng nhập chưa (dựa vào thông tin currentUser đã lưu lúc đăng nhập)
             const currentUser = JSON.parse(localStorage.getItem("currentUser"));

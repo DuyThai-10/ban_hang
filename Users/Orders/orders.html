@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theo dõi đơn hàng - Web Shop</title>
+    <!-- Link FontAwesome để dùng icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Link file CSS riêng -->
+    <link rel="stylesheet" href="orders.css">
+</head>
+<body>
+
+    <!-- Khung chứa nội dung chính -->
+    <div class="orders-container">
+        <div class="orders-header">
+            <h2><i class="fa-solid fa-box-archive"></i> Lịch Sử Đơn Hàng Của Bạn</h2>
+            <p>Quản lý và theo dõi trạng thái các đơn hàng bạn đã đặt trên hệ thống.</p>
+        </div>
+
+        <!-- Nơi JavaScript sẽ bơm danh sách đơn hàng (và nút xóa tất cả) vào đây -->
+        <div id="lich-su-container">
+            <!-- Dữ liệu đơn hàng sẽ được render động ở đây -->
+        </div>
+
+        <!-- Nút quay về trang chủ -->
+        <div class="back-home">
+            <a href="../Home/home.html"><i class="fa-solid fa-arrow-left"></i> Quay về trang chủ</a>
+        </div>
+    </div>
+
+    <!-- Link file JavaScript xử lý hiển thị -->
+    <script src="orders.js"></script>
+</body>
+</html>

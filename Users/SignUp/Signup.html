@@ -163,7 +163,7 @@
         }
 
         // 2. Lấy danh sách tài khoản đã đăng ký trước đó (nếu có) từ localStorage
-        let userList = JSON.parse(localStorage.getItem("userList")) || [];
+        let userlist = JSON.parse(localStorage.getItem("userList")) || [];
 
         // 3. Kiểm tra xem tên đăng nhập hoặc email đã được dùng chưa
         const existingUser = userList.find(u => u.tenDangNhap === tenDangNhap || u.email === email);
