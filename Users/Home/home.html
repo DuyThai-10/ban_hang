@@ -15,10 +15,23 @@
 <body>
 
     <header id="header">
+    <!-- Logo bên trái -->
     <a href="../Home/home.html" class="logo-link">
         <span class="logo-text">WEB SHOP</span>
     </a>
 
+    <!-- THANH TÌM KIẾM Ở CHÍNH GIỮA HEADER -->
+    
+<div class="search-box-container">
+    <form action="../Products/products.html" method="GET" class="search-input-wrapper">
+        <button type="submit" style="background: none; border: none; cursor: pointer;">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        </button>
+        <input type="text" name="search" id="navbarSearchInput" placeholder="Tìm kiếm sản phẩm...">
+    </form>
+</div>
+
+    <!-- Menu điều hướng bên phải -->
     <nav>
         <ul class="navbar">
             <li><a class="active" href="home.html">Trang Chủ</a></li>
