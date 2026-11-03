@@ -132,60 +132,69 @@
     }
 
 
-    // ==========================================
-    // 5. HÀM XỬ LÝ ĐẶT HÀNG / THANH TOÁN
-    // ==========================================
-    function datHang() {
-        // Lấy thông tin tài khoản người dùng đang đăng nhập từ kho localStorage
-        const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-        
-        // Kiểm tra xem người dùng đã đăng nhập chưa, nếu chưa thì bắt buộc chuyển hướng về trang đăng nhập
-        if (!currentUser) {
-            alert("Vui lòng đăng nhập trước khi tiến hành thanh toán!");
-            window.location.href = "../LogIn/login.html";
-            return; // Dừng lại không chạy tiếp đoạn dưới
-        }
-
-        // Lấy danh sách sản phẩm trong giỏ hàng hiện tại của tài khoản đang đăng nhập
-        let cart = JSON.parse(localStorage.getItem("cart")) || [];
-        
-        // Kiểm tra nếu giỏ hàng trống thì thông báo lỗi và dừng lại
-        if (cart.length === 0) {
-            alert("Giỏ hàng của bạn đang trống, không thể đặt hàng!");
-            return; // Dừng lại không tạo đơn hàng rỗng
-        }
-
-        // Tính tổng số tiền của toàn bộ sản phẩm có trong giỏ hàng hiện tại
-        let tongTienHang = cart.reduce((tong, sanPham) => tong + (sanPham.price * sanPham.soLuong), 0);
-
-        // Tạo một đối tượng đơn hàng độc lập mới cho lần bấm đặt này
-        const donHangMoi = {
-            maDonHang: "DH" + Math.floor(100000 + Math.random() * 900000), // Tạo mã đơn hàng ngẫu nhiên gồm 6 chữ số
-            username: currentUser.username || currentUser.tenDangNhap, // Gắn "dấu vân tay" username của khách vào để phân biệt
-            ngayDat: new Date().toLocaleString('vi-VN'), // Lưu thời gian chính xác lúc bấm đặt hàng theo giờ Việt Nam
-            danhSachSanPham: cart, // Lưu lại nguyên cục sản phẩm từ giỏ hàng sang đơn hàng này
-            tongTien: tongTienHang, // Lưu tổng tiền thanh toán của đơn hàng
-            trangThai: "Đang chuẩn bị hàng" // Trạng thái mặc định để phục vụ cho việc theo dõi đơn hàng sau này
-        };
-
-        // Lấy danh sách tổng tất cả các đơn hàng của toàn hệ thống từ localStorage ra
-        let danhSachDonHang = JSON.parse(localStorage.getItem("danhSachDonHang")) || [];
-        
-        // Đẩy đơn hàng mới vừa tạo vào mảng tổng của hệ thống (giúp Admin có thể xem được)
-        danhSachDonHang.push(donHangMoi);
-        
-        // Lưu ngược lại mảng tổng danhSachDonHang vào localStorage
-        localStorage.setItem("danhSachDonHang", JSON.stringify(danhSachDonHang));
-
-        // Xóa sạch giỏ hàng hiện tại của người dùng sau khi đặt hàng thành công
-        localStorage.removeItem("cart");
-
-        // Hiển thị thông báo thành công kèm theo mã đơn hàng cho khách biết
-        alert(`Đặt hàng thành công! Mã đơn hàng của bạn là: ${donHangMoi.maDonHang}`);
-        
-        // Tải lại trang giỏ hàng để giao diện cập nhật trạng thái giỏ hàng trống
-        window.location.reload();
+   // ==========================================
+// HÀM XỬ LÝ ĐẶT HÀNG / THANH TOÁN 
+// ==========================================
+function datHang() {
+    // 1. Lấy thông tin tài khoản đang đăng nhập
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    if (!currentUser) {
+        alert("Vui lòng đăng nhập trước khi tiến hành thanh toán!");
+        window.location.href = "../LogIn/login.html";
+        return;
     }
 
+    // 2. Lấy giỏ hàng từ localStorage
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    if (!Array.isArray(cart) || cart.length === 0) {
+        alert("Giỏ hàng của bạn đang trống, không thể đặt hàng!");
+        return;
+    }
 
+    // 3. Tính tổng tiền hàng (Đã khai báo tường minh ở đây)
+    let tongTienHang = cart.reduce((tong, sanPham) => tong + (sanPham.price * sanPham.soLuong), 0);
 
+    // 4. Tạo đối tượng đơn hàng mới lưu vào hệ thống
+    const donHangMoi = {
+        maDonHang: "DH" + Math.floor(100000 + Math.random() * 900000),
+        username: currentUser.username || currentUser.tenDangNhap,
+        ngayDat: new Date().toLocaleString('vi-VN'),
+        danhSachSanPham: cart,
+        tongTien: tongTienHang,
+        trangThai: "Đang chuẩn bị hàng"
+    };
+
+    let danhSachDonHang = JSON.parse(localStorage.getItem("danhSachDonHang")) || [];
+    danhSachDonHang.push(donHangMoi);
+    localStorage.setItem("danhSachDonHang", JSON.stringify(danhSachDonHang));
+
+    // ==========================================
+    // 5. GỬI EMAIL XÁC NHẬN QUA EMAILJS
+    // ==========================================
+    let chiTietSanPhamText = "";
+    cart.forEach((item, index) => {
+        chiTietSanPhamText += `${index + 1}. ${item.name} - Số lượng: ${item.soLuong} - Giá: ${item.price.toLocaleString('vi-VN')}đ\n`;
+    });
+    chiTietSanPhamText += `\nTỔNG TIỀN THANH TOÁN: ${tongTienHang.toLocaleString('vi-VN')}đ`;
+    chiTietSanPhamText += `\nMã đơn hàng của bạn là: ${donHangMoi.maDonHang}`;
+
+    let templateParams = {
+        to_name: currentUser.hoTen || currentUser.tenDangNhap,
+        email: currentUser.email,
+        message: chiTietSanPhamText
+    };
+
+    // Gọi hàm gửi mail (Nhớ thay Service ID và Template ID thật của bạn)
+    emailjs.send('service_0al4ayx', 'template_yinrr0a', templateParams)
+        .then(function(response) {
+            console.log('Gửi email xác nhận thành công!', response.status, response.text);
+        }, function(error) {
+            console.log('Gửi email thất bại...', error);
+        });
+    // ==========================================
+
+    // 6. Xóa giỏ hàng, thông báo và tải lại trang
+    localStorage.removeItem("cart");
+    alert(`Đặt hàng thành công! Mã đơn hàng của bạn là: ${donHangMoi.maDonHang}`);
+    window.location.reload();
+}
