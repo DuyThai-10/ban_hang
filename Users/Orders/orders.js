@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
 function hienThiLichSuDonHang() {
     // 1. Lấy thông tin tài khoản đang đăng nhập từ localStorage
     const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-    
+
     // Nếu chưa đăng nhập thì đẩy về trang đăng nhập
     if (!currentUser) {
         alert("Vui lòng đăng nhập để xem lịch sử đơn hàng!");
@@ -46,7 +46,7 @@ function hienThiLichSuDonHang() {
 
     donHangCuaToi.forEach(don => {
         let danhSachSanPhamHTML = "";
-        
+
         // Duyệt qua mảng danhSachSanPham trong từng đơn hàng (Đã fix chuẩn cú pháp nhân giá tiền)
         don.danhSachSanPham.forEach(sp => {
             let thanhTienSP = sp.price * sp.soLuong;
@@ -90,13 +90,13 @@ function hienThiLichSuDonHang() {
 function xoaDonHang(maDonHang) {
     if (confirm(`Bạn có chắc chắn muốn hủy / xóa đơn hàng ${maDonHang} này không?`)) {
         let danhSachDonHang = JSON.parse(localStorage.getItem("danhSachDonHang")) || [];
-        
+
         // Lọc bỏ đơn hàng có maDonHang trùng khớp
         danhSachDonHang = danhSachDonHang.filter(don => don.maDonHang !== maDonHang);
-        
+
         // Cập nhật lại vào localStorage
         localStorage.setItem("danhSachDonHang", JSON.stringify(danhSachDonHang));
-        
+
         alert("Đã xóa đơn hàng thành công!");
         hienThiLichSuDonHang();
     }
@@ -113,12 +113,12 @@ function xoaTatCaDonHangCuaToi() {
 
     if (confirm("Bạn có chắc chắn muốn XÓA SẠCH toàn bộ lịch sử đơn hàng của bạn không?")) {
         let danhSachDonHang = JSON.parse(localStorage.getItem("danhSachDonHang")) || [];
-        
+
         // Chỉ giữ lại đơn hàng của người khác, xóa sạch đơn của tài khoản này
         danhSachDonHang = danhSachDonHang.filter(don => don.username !== tenDangNhapHienTai);
-        
+
         localStorage.setItem("danhSachDonHang", JSON.stringify(danhSachDonHang));
-        
+
         alert("Đã làm mới và xóa sạch lịch sử đơn hàng của bạn!");
         hienThiLichSuDonHang();
     }
