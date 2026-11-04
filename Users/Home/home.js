@@ -119,3 +119,6 @@
             // Thông báo cho người dùng biết đã thêm thành công
             alert(`Đã thêm sản phẩm "${sanPhamChon.name}" vào giỏ hàng thành công!`);
         }
+
+
+        
