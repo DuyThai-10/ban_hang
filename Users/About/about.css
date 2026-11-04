@@ -1,5 +1,5 @@
 /* ==========================================================================
-   1. CÀI ĐẶT CHUNG (RESET & BASE STYLES)
+   1. CÀI ĐẶT CHUNG
    ========================================================================== */
 
 * {
@@ -10,8 +10,8 @@
 }
 
 body {
-    background-color: #f5f6fa; /* Màu nền xám nhạt toàn trang */
-    color: #2f3640;            /* Màu chữ chính */
+    background-color: #f5f6fa;
+    color: #2f3640;
 }
 
 a {
@@ -23,38 +23,37 @@ ul {
     list-style: none;
 }
 
-/* Khoảng cách đệm chung cho các section nội dung */
 .section-p1 {
     padding: 40px 8%;
 }
 
 
 /* ==========================================================================
-   2. THANH MENU ĐẦU TRANG (HEADER & NAVBAR)
+   2. THANH MENU ĐẦU TRANG
    ========================================================================== */
 
 #header {
-    display: flex;                 /* Dàn hàng ngang */
-    justify-content: space-between;/* Đẩy logo sang trái, menu sang phải */
-    align-items: center;           /* Căn giữa theo chiều dọc */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 15px 8%;
-    background-color: #ffffff;     /* Nền trắng */
-    position: sticky;              /* Ghim cố định ở đầu trang khi cuộn */
+    background-color: #ffffff;
+    position: sticky;
     top: 0;
-    z-index: 1000;                 /* Luôn hiển thị nổi lên trên cùng */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Hiệu ứng bóng đổ nhẹ bên dưới */
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .logo-text {
     font-size: 22px;
     font-weight: bold;
-    color: #0f8b8d;                /* Màu xanh thương hiệu */
+    color: #0f8b8d;
 }
 
 .navbar {
     display: flex;
     align-items: center;
-    gap: 25px;                     /* Khoảng cách giữa các mục menu */
+    gap: 25px;
 }
 
 .navbar a {
@@ -64,14 +63,14 @@ ul {
     transition: 0.2s;
 }
 
-/* Hiệu ứng đổi màu khi rê chuột hoặc đang ở trang hiện tại (active) */
-.navbar a:hover, .navbar a.active {
+.navbar a:hover,
+.navbar a.active {
     color: #0f8b8d;
 }
 
 
 /* ==========================================================================
-   3. KHU VỰC TÀI KHOẢN & ĐĂNG XUẤT TRÊN THANH NAV (#authMenu)
+   3. KHU VỰC TÀI KHOẢN
    ========================================================================== */
 
 #authMenu {
@@ -80,8 +79,8 @@ ul {
     gap: 10px;
 }
 
-/* Định dạng nút Đăng nhập & Đăng ký */
-.btn-login, .btn-signup {
+.btn-login,
+.btn-signup {
     font-size: 14px;
     font-weight: 600;
     color: #2f3640;
@@ -90,11 +89,11 @@ ul {
     transition: 0.2s;
 }
 
-.btn-login:hover, .btn-signup:hover {
+.btn-login:hover,
+.btn-signup:hover {
     color: #0f8b8d;
 }
 
-/* Định dạng khi đã đăng nhập (Hiển thị tên người dùng và nút Đăng xuất) */
 #authMenu div {
     display: flex;
     align-items: center;
@@ -111,7 +110,7 @@ ul {
 }
 
 #btnDangXuat {
-    background-color: #e74c3c; /* Màu đỏ nổi bật cho nút đăng xuất */
+    background-color: #e74c3c;
     color: white;
     border: none;
     padding: 6px 12px;
@@ -123,14 +122,16 @@ ul {
 }
 
 #btnDangXuat:hover {
-    background-color: #c0392b; /* Đổi sang màu đỏ đậm khi rê chuột vào */
+    background-color: #c0392b;
 }
 
 
-/* BANNER TRANG ABOUT */
+/* ==========================================================================
+   4. BANNER TRANG ABOUT
+   ========================================================================== */
+
 #about-header {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1600') center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1600') center/cover no-repeat;
     height: 40vh;
     width: 100%;
     display: flex;
@@ -152,7 +153,11 @@ ul {
     color: #f1f5f9;
 }
 
-/* PHẦN CHIA 2 CỘT (HÌNH ẢNH & NỘI DUNG) */
+
+/* ==========================================================================
+   5. PHẦN GIỚI THIỆU
+   ========================================================================== */
+
 #about-head {
     display: flex;
     align-items: center;
@@ -160,7 +165,7 @@ ul {
     background: #ffffff;
     margin: 30px 8%;
     border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
 }
 
 #about-head img {
@@ -187,17 +192,11 @@ ul {
     margin-bottom: 15px;
 }
 
-#about-head abbr {
-    font-weight: 600;
-    color: #333;
-    background: #e8f3f1;
-    padding: 8px 12px;
-    display: inline-block;
-    border-radius: 4px;
-    border-left: 4px solid #0f8b8d;
-}
 
-/* KHỐI THỐNG KÊ (STAT BOXES) */
+/* ==========================================================================
+   6. KHỐI THỐNG KÊ
+   ========================================================================== */
+
 #about-app {
     display: flex;
     justify-content: space-between;
@@ -211,11 +210,7 @@ ul {
     text-align: center;
     padding: 30px 20px;
     border-radius: 10px;
-    
-    
 }
-
-
 
 .stat-box i {
     font-size: 35px;
@@ -234,7 +229,11 @@ ul {
     color: #777;
 }
 
-/* FOOTER */
+
+/* ==========================================================================
+   7. FOOTER
+   ========================================================================== */
+
 footer {
     background: #ffffff;
     border-top: 1px solid #e1e8ef;
@@ -245,4 +244,35 @@ footer {
 .copyright {
     color: #777;
     font-size: 14px;
+}
+
+
+/* ==========================================================================
+   8. RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    #header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    #about-head {
+        flex-direction: column;
+        gap: 20px;
+    }
+    #about-head img,
+    #about-head .about-details {
+        width: 100%;
+    }
+    #about-app {
+        flex-direction: column;
+    }
+    #about-header h2 {
+        font-size: 30px;
+    }
 }
