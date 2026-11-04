@@ -1,13 +1,23 @@
 <!DOCTYPE html> 
 <html lang="vi"> 
-<head> 
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giỏ hàng - WEB SHOP</title> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="cart.css">
-    <!-- Thư viện EmailJS -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <!-- 1. BẮT BUỘC ĐẶT DÒNG TẢI THƯ VIỆN NÀY LÊN TRÊN HẾT -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <!-- 2. SAU ĐÓ MỚI ĐẾN ĐOẠN KHỞI TẠO NÀY Ở DƯỚI -->
+    <script type="text/javascript">
+        (function(){
+            emailjs.init({
+                publicKey: "8lKRE4hQcyClpkjDA",
+            });
+        })();
+    </script>
 </head>
 <body> 
     <!-- THANH NAV CHUNG -->
