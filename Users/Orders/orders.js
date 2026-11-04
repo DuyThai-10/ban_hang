@@ -38,8 +38,7 @@ function hienThiLichSuDonHang() {
     // 5. Thêm nút "Xóa tất cả lịch sử" ở trên cùng, sau đó duyệt qua từng đơn hàng
     let htmlContent = `
         <div style="text-align: right; margin-bottom: 15px;">
-            <button onclick="xoaTatCaDonHangCuaToi()" style="background-color: #ef4444; color: white; border: none; padding: 8px 14px; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: bold;">
-                <i class="fa-solid fa-trash"></i> Xóa tất cả lịch sử đơn
+    
             </button>
         </div>
     `;
@@ -56,16 +55,7 @@ function hienThiLichSuDonHang() {
         });
 
         htmlContent += `
-            <div class="order-card">
-                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #f1f5f9; padding-bottom: 10px; margin-bottom: 15px;">
-                    <h3 style="margin: 0; border: none; padding: 0;"><i class="fa-solid fa-receipt"></i> Mã đơn hàng: ${don.maDonHang}</h3>
-                    
-                    <!-- NÚT XÓA TỪNG ĐƠN HÀNG -->
-                    <button onclick="xoaDonHang('${don.maDonHang}')" style="background: none; border: 1px solid #ef4444; color: #ef4444; padding: 4px 10px; border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: bold;">
-                        <i class="fa-solid fa-xmark"></i> Hủy / Xóa đơn
-                    </button>
-                </div>
-
+           
                 <p><strong>🕒 Ngày đặt:</strong> ${don.ngayDat}</p>
                 <p><strong>📌 Trạng thái:</strong> <span class="order-status">${don.trangThai}</span></p>
                 
