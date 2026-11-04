@@ -1,0 +1,299 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang tổng quan - Admin</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+
+    <!-- Thư viện icon -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="khung-dashboard">
+
+        <!-- PHẦN TIÊU ĐỀ -->
+        <div class="tieu-de-trang">
+            <div>
+                <h1>Tổng quan</h1>
+                <p>Chào mừng bạn quay trở lại trang quản trị!</p>
+            </div>
+
+            <div class="ngay-hien-tai">
+                <i class="fa-regular fa-calendar"></i>
+                <span id="ngay-hien-tai"></span>
+            </div>
+        </div>
+
+
+        <!-- PHẦN THỐNG KÊ -->
+        <div class="khu-vuc-thong-ke">
+
+            <!-- Tổng sản phẩm -->
+            <div class="the-thong-ke">
+                <div class="bieu-tuong bieu-tuong-san-pham">
+                    <i class="fa-solid fa-box"></i>
+                </div>
+
+                <div class="thong-tin">
+                    <p>Tổng sản phẩm</p>
+                    <h2 id="tong-san-pham">120</h2>
+                    <span>Đang kinh doanh</span>
+                </div>
+            </div>
+
+            <!-- Tổng đơn hàng -->
+            <div class="the-thong-ke">
+                <div class="bieu-tuong bieu-tuong-don-hang">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+
+                <div class="thong-tin">
+                    <p>Tổng đơn hàng</p>
+                    <h2 id="tong-don-hang">85</h2>
+                    <span>Đơn hàng đã ghi nhận</span>
+                </div>
+            </div>
+
+            <!-- Tổng khách hàng -->
+            <div class="the-thong-ke">
+                <div class="bieu-tuong bieu-tuong-khach-hang">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+
+                <div class="thong-tin">
+                    <p>Khách hàng</p>
+                    <h2 id="tong-khach-hang">64</h2>
+                    <span>Khách hàng đã đăng ký</span>
+                </div>
+            </div>
+
+            <!-- Tổng doanh thu -->
+            <div class="the-thong-ke">
+                <div class="bieu-tuong bieu-tuong-doanh-thu">
+                    <i class="fa-solid fa-sack-dollar"></i>
+                </div>
+
+                <div class="thong-tin">
+                    <p>Doanh thu</p>
+                    <h2 id="tong-doanh-thu">25.500.000đ</h2>
+                    <span>Tổng doanh thu mẫu</span>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- PHẦN NỘI DUNG CHÍNH -->
+        <div class="khu-vuc-noi-dung">
+
+            <!-- BẢNG ĐƠN HÀNG GẦN ĐÂY -->
+            <div class="khung-noi-dung khung-don-hang">
+
+                <div class="tieu-de-khung">
+                    <div>
+                        <h3>Đơn hàng gần đây</h3>
+                        <p>Theo dõi các đơn hàng mới nhất</p>
+                    </div>
+
+                    <a href="../Orders/orders.html">Xem tất cả</a>
+                </div>
+
+                <div class="khung-bang">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Mã đơn</th>
+                                <th>Khách hàng</th>
+                                <th>Ngày đặt</th>
+                                <th>Tổng tiền</th>
+                                <th>Trạng thái</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>#DH001</td>
+                                <td>Nguyễn Văn An</td>
+                                <td>31/10/2026</td>
+                                <td>450.000đ</td>
+                                <td>
+                                    <span class="trang-thai cho-xu-ly">
+                                        Chờ xử lý
+                                    </span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>#DH002</td>
+                                <td>Trần Thị Hoa</td>
+                                <td>30/10/2026</td>
+                                <td>320.000đ</td>
+                                <td>
+                                    <span class="trang-thai dang-giao">
+                                        Đang giao
+                                    </span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>#DH003</td>
+                                <td>Lê Minh Tuấn</td>
+                                <td>30/10/2026</td>
+                                <td>780.000đ</td>
+                                <td>
+                                    <span class="trang-thai hoan-thanh">
+                                        Hoàn thành
+                                    </span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>#DH004</td>
+                                <td>Phạm Thu Hà</td>
+                                <td>29/10/2026</td>
+                                <td>250.000đ</td>
+                                <td>
+                                    <span class="trang-thai da-huy">
+                                        Đã hủy
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+
+            <!-- SẢN PHẨM NỔI BẬT -->
+            <div class="khung-noi-dung khung-san-pham">
+
+                <div class="tieu-de-khung">
+                    <div>
+                        <h3>Sản phẩm nổi bật</h3>
+                        <p>Các sản phẩm bán chạy</p>
+                    </div>
+
+                    <a href="../Products/products.html">Xem tất cả</a>
+                </div>
+
+                <div class="san-pham-noi-bat">
+
+                    <div class="san-pham">
+                        <div class="anh-san-pham">
+                            <i class="fa-solid fa-shirt"></i>
+                        </div>
+
+                        <div class="thong-tin-san-pham">
+                            <h4>Áo thun basic</h4>
+                            <p>Đã bán: 120 sản phẩm</p>
+                        </div>
+
+                        <strong>250.000đ</strong>
+                    </div>
+
+
+                    <div class="san-pham">
+                        <div class="anh-san-pham">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                        </div>
+
+                        <div class="thong-tin-san-pham">
+                            <h4>Túi xách thời trang</h4>
+                            <p>Đã bán: 95 sản phẩm</p>
+                        </div>
+
+                        <strong>350.000đ</strong>
+                    </div>
+
+
+                    <div class="san-pham">
+                        <div class="anh-san-pham">
+                            <i class="fa-solid fa-shoe-prints"></i>
+                        </div>
+
+                        <div class="thong-tin-san-pham">
+                            <h4>Giày thể thao</h4>
+                            <p>Đã bán: 78 sản phẩm</p>
+                        </div>
+
+                        <strong>650.000đ</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PHẦN THỐNG KÊ TRẠNG THÁI ĐƠN HÀNG -->
+        <div class="khu-vuc-thong-tin-nhanh">
+
+            <div class="the-thong-tin-nhanh">
+                <div class="bieu-tuong-nhanh">
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+
+                <div>
+                    <p>Đơn hàng chờ xử lý</p>
+                    <h2>12</h2>
+                </div>
+            </div>
+
+
+            <div class="the-thong-tin-nhanh">
+                <div class="bieu-tuong-nhanh">
+                    <i class="fa-solid fa-truck-fast"></i>
+                </div>
+
+                <div>
+                    <p>Đơn hàng đang giao</p>
+                    <h2>18</h2>
+                </div>
+            </div>
+
+
+            <div class="the-thong-tin-nhanh">
+                <div class="bieu-tuong-nhanh">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+
+                <div>
+                    <p>Đơn hàng hoàn thành</p>
+                    <h2>50</h2>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        // Lấy ngày hiện tại
+        let ngayHienTai = new Date();
+
+        // Định dạng ngày tháng theo tiếng Việt
+        let ngayDaDinhDang = ngayHienTai.toLocaleDateString("vi-VN", {
+            weekday: "long",
+            day: "2-digit",
+            month: "2-digit",
+            year: "numeric"
+        });
+
+        // Hiển thị ngày lên giao diện
+        document.getElementById("ngay-hien-tai").textContent = ngayDaDinhDang;
+
+    </script>
+
+</body>
+</html>

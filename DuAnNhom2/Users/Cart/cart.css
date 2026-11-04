@@ -1,0 +1,167 @@
+/* ==========================================================================
+   1. CÀI ĐẶT CHUNG (RESET & BASE STYLES)
+   ========================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f6fa; /* Màu nền xám nhạt toàn trang */
+    color: #2f3640;            /* Màu chữ chính */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Khoảng cách đệm chung cho các section nội dung */
+.section-p1 {
+    padding: 40px 8%;
+}
+
+
+/* ==========================================================================
+   2. THANH MENU ĐẦU TRANG (HEADER & NAVBAR)
+   ========================================================================== */
+
+#header {
+    display: flex;                 /* Dàn hàng ngang */
+    justify-content: space-between;/* Đẩy logo sang trái, menu sang phải */
+    align-items: center;           /* Căn giữa theo chiều dọc */
+    padding: 15px 8%;
+    background-color: #ffffff;     /* Nền trắng */
+    position: sticky;              /* Ghim cố định ở đầu trang khi cuộn */
+    top: 0;
+    z-index: 1000;                 /* Luôn hiển thị nổi lên trên cùng */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Hiệu ứng bóng đổ nhẹ bên dưới */
+}
+
+.logo-text {
+    font-size: 22px;
+    font-weight: bold;
+    color: #0f8b8d;                /* Màu xanh thương hiệu */
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 25px;                     /* Khoảng cách giữa các mục menu */
+}
+
+.navbar a {
+    font-weight: 600;
+    font-size: 14px;
+    color: #2f3640;
+    transition: 0.2s;
+}
+
+/* Hiệu ứng đổi màu khi rê chuột hoặc đang ở trang hiện tại (active) */
+.navbar a:hover, .navbar a.active {
+    color: #0f8b8d;
+}
+
+
+/* ==========================================================================
+   3. KHU VỰC TÀI KHOẢN & ĐĂNG XUẤT TRÊN THANH NAV (#authMenu)
+   ========================================================================== */
+
+#authMenu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Định dạng nút Đăng nhập & Đăng ký */
+.btn-login, .btn-signup {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2f3640;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+
+.btn-login:hover, .btn-signup:hover {
+    color: #0f8b8d;
+}
+
+/* Định dạng khi đã đăng nhập (Hiển thị tên người dùng và nút Đăng xuất) */
+#authMenu div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#authMenu span {
+    font-weight: bold;
+    color: #0f8b8d;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+#btnDangXuat {
+    background-color: #e74c3c; /* Màu đỏ nổi bật cho nút đăng xuất */
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 13px;
+    transition: 0.2s;
+}
+
+#btnDangXuat:hover {
+    background-color: #c0392b; /* Đổi sang màu đỏ đậm khi rê chuột vào */
+}
+
+
+
+
+/* --- CSS BẢNG GIỎ HÀNG ĐƠN GIẢN --- */
+#cart {
+    padding: 20px;
+}
+
+#cart table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+#cart th, #cart td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#cart th {
+    background-color: #0D9295;
+    color: white;
+}
+
+#cart img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}
+
+#cart button {
+    background: none;
+    border: none;
+    color: red;
+    font-size: 16px;
+    cursor: pointer;
+}

@@ -1,0 +1,269 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý sản phẩm</title>
+
+    <link rel="stylesheet" href="products.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="khung-quan-ly">
+
+        <!-- TIÊU ĐỀ -->
+        <div class="tieu-de-trang">
+            <div>
+                <h1>Quản lý sản phẩm</h1>
+                <p>Quản lý danh sách và thông tin sản phẩm của cửa hàng.</p>
+            </div>
+
+            <button class="nut-them" onclick="moFormThem()">
+                <i class="fa-solid fa-plus"></i>
+                Thêm sản phẩm
+            </button>
+        </div>
+
+
+        <!-- THỐNG KÊ -->
+        <div class="khu-vuc-thong-ke">
+
+            <div class="the-thong-ke">
+                <div class="bieu-tuong mau-xanh">
+                    <i class="fa-solid fa-box"></i>
+                </div>
+
+                <div>
+                    <p>Tổng sản phẩm</p>
+                    <h2 id="tong-san-pham">0</h2>
+                </div>
+            </div>
+
+            <div class="the-thong-ke">
+                <div class="bieu-tuong mau-cam">
+                    <i class="fa-solid fa-warehouse"></i>
+                </div>
+
+                <div>
+                    <p>Tổng số lượng tồn</p>
+                    <h2 id="tong-ton-kho">0</h2>
+                </div>
+            </div>
+
+            <div class="the-thong-ke">
+                <div class="bieu-tuong mau-do">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                </div>
+
+                <div>
+                    <p>Sắp hết hàng</p>
+                    <h2 id="san-pham-sap-het">0</h2>
+                </div>
+            </div>
+
+            <div class="the-thong-ke">
+                <div class="bieu-tuong mau-tim">
+                    <i class="fa-solid fa-tags"></i>
+                </div>
+
+                <div>
+                    <p>Số danh mục</p>
+                    <h2 id="tong-danh-muc">0</h2>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- DANH SÁCH SẢN PHẨM -->
+        <div class="khung-danh-sach">
+
+            <div class="thanh-cong-cu">
+
+                <div class="o-tim-kiem">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        id="tu-khoa"
+                        placeholder="Tìm kiếm theo tên sản phẩm..."
+                        oninput="hienThiSanPham()">
+                </div>
+
+                <div class="bo-loc">
+                    <select id="loc-danh-muc" onchange="hienThiSanPham()">
+                        <option value="">Tất cả danh mục</option>
+                        <option value="Áo">Áo</option>
+                        <option value="Quần">Quần</option>
+                        <option value="Giày">Giày</option>
+                        <option value="Phụ kiện">Phụ kiện</option>
+                    </select>
+
+                    <select id="loc-trang-thai" onchange="hienThiSanPham()">
+                        <option value="">Tất cả trạng thái</option>
+                        <option value="con-hang">Còn hàng</option>
+                        <option value="sap-het">Sắp hết hàng</option>
+                        <option value="het-hang">Hết hàng</option>
+                    </select>
+                </div>
+
+            </div>
+
+
+            <!-- BẢNG SẢN PHẨM -->
+            <div class="khung-bang">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Hình ảnh</th>
+                            <th>Mã sản phẩm</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Danh mục</th>
+                            <th>Giá bán</th>
+                            <th>Số lượng</th>
+                            <th>Trạng thái</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="danh-sach-san-pham">
+                        <!-- JavaScript hiển thị sản phẩm tại đây -->
+                    </tbody>
+                </table>
+
+                <div id="thong-bao-trong" class="thong-bao-trong">
+                    <i class="fa-solid fa-box-open"></i>
+                    <p>Không tìm thấy sản phẩm nào.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FORM THÊM / SỬA SẢN PHẨM -->
+    <div class="lop-phu" id="lop-phu">
+
+        <div class="hop-thoai">
+
+            <div class="dau-hop-thoai">
+                <div>
+                    <h2 id="tieu-de-form">Thêm sản phẩm</h2>
+                    <p>Nhập thông tin sản phẩm bên dưới</p>
+                </div>
+
+                <button class="nut-dong" onclick="dongForm()">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+
+            <form id="form-san-pham" onsubmit="luuDuLieu(); return false;">
+
+                <input type="hidden" id="vi-tri-sua">
+
+                <div class="luoi-form">
+
+                    <div class="nhom-nhap">
+                        <label for="ma-san-pham">Mã sản phẩm</label>
+                        <input
+                            type="text"
+                            id="ma-san-pham"
+                            placeholder="Ví dụ: SP005"
+                            required>
+                    </div>
+
+                    <div class="nhom-nhap">
+                        <label for="ten-san-pham">Tên sản phẩm</label>
+                        <input
+                            type="text"
+                            id="ten-san-pham"
+                            placeholder="Nhập tên sản phẩm"
+                            required>
+                    </div>
+
+                    <div class="nhom-nhap">
+                        <label for="danh-muc">Danh mục</label>
+                        <select id="danh-muc" required>
+                            <option value="">-- Chọn danh mục --</option>
+                            <option value="Áo">Áo</option>
+                            <option value="Quần">Quần</option>
+                            <option value="Giày">Giày</option>
+                            <option value="Phụ kiện">Phụ kiện</option>
+                        </select>
+                    </div>
+
+                    <div class="nhom-nhap">
+                        <label for="gia-san-pham">Giá bán (VNĐ)</label>
+                        <input
+                            type="number"
+                            id="gia-san-pham"
+                            min="0"
+                            placeholder="Ví dụ: 250000"
+                            required>
+                    </div>
+
+                    <div class="nhom-nhap">
+                        <label for="so-luong">Số lượng tồn kho</label>
+                        <input
+                            type="number"
+                            id="so-luong"
+                            min="0"
+                            placeholder="Nhập số lượng"
+                            required>
+                    </div>
+
+                    <div class="nhom-nhap nhom-hinh-anh">
+                        <label for="hinh-anh">Hình ảnh sản phẩm</label>
+
+                        <input
+                            type="file"
+                            id="hinh-anh"
+                            accept="image/*"
+                            onchange="xemTruocAnh(event)">
+                    </div>
+
+                </div>
+
+
+                <!-- XEM TRƯỚC HÌNH ẢNH -->
+                <div class="khung-xem-anh">
+                    <img id="anh-xem-truoc" src="" alt="Ảnh xem trước">
+
+                    <div id="huong-dan-anh">
+                        <i class="fa-regular fa-image"></i>
+                        <p>Chưa chọn hình ảnh</p>
+                    </div>
+                </div>
+
+
+                <div class="cuoi-form">
+                    <button type="button" class="nut-huy" onclick="dongForm()">
+                        Hủy
+                    </button>
+
+                    <button type="submit" class="nut-luu" >
+                        <i class="fa-solid fa-floppy-disk"></i>
+                        Lưu sản phẩm
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="products.js"></script>
+
+</body>
+</html>
