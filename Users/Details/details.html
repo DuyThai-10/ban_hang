@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Tiết Sản Phẩm</title>
+    <!-- FontAwesome cho icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Link file CSS -->
+    <link rel="stylesheet" href="details.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Khung hiển thị chi tiết sản phẩm -->
+        <div class="product-detail-card" id="product-detail-box">
+            <!-- Hình ảnh sản phẩm -->
+            <div class="product-image">
+                <img id="detail-img" src="" alt="Ảnh sản phẩm">
+            </div>
+
+            <!-- Thông tin chi tiết -->
+            <div class="product-info">
+                <h1 id="detail-name">Đang tải tên sản phẩm...</h1>
+                <p class="price" id="detail-price">0đ</p>
+                
+                <div class="description">
+                    <h3>Mô tả sản phẩm:</h3>
+                    <p id="detail-desc">Đang tải thông tin chi tiết...</p>
+                </div>
+
+                <!-- Bộ chọn số lượng -->
+                <div class="quantity-box">
+                    <label>Số lượng:</label>
+                    <button type="button" onclick="giamSoLuong()">-</button>
+                    <input type="number" id="quantity-input" value="1" min="1">
+                    <button type="button" onclick="tangSoLuong()">+</button>
+                </div>
+
+                <!-- Các nút hành động -->
+                <div class="actions">
+                    <button class="btn-add-cart" onclick="themVaoGioHangChitiet()">
+                        <i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng
+                    </button>
+                    <a href="../Home/home.html" class="btn-back">
+                        <i class="fa-solid fa-arrow-left"></i> Quay lại trang chủ
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link file JavaScript -->
+    <script src="details.js"></script>
+</body>
+</html>

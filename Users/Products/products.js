@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // ==========================================
-// HÀM VẼ GIAO DIỆN SẢN PHẨM LÊN TRANG
+// HÀM VẼ GIAO DIỆN SẢN PHẨM LÊN TRANG (ĐÃ TÍCH HỢP LINK CHI TIẾT)
 // ==========================================
 function hienThiSanPham(ds) {
     // Tìm đến khung chứa sản phẩm có id là "productContainer" trong file HTML
@@ -88,19 +88,23 @@ function hienThiSanPham(ds) {
         // Tạo khung HTML giao diện cho từng sản phẩm
         htmlContent += `
             <div class="pro">
-                <img src="${sp.image}" alt="${sp.name}">
-                <div class="des">
-                    <span>${sp.brand}</span>
-                    <h3>${sp.name}</h3>
-                    <div class="star">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
+                <!-- ⭐ Bọc ảnh và thông tin trong thẻ <a> để khi nhấn vào sẽ chuyển sang trang chi tiết -->
+                <a href="../Details/details.html?id=${sp.id}" style="text-decoration: none; color: inherit; display: block;">
+                    <img src="${sp.image}" alt="${sp.name}">
+                    <div class="des">
+                        <span>${sp.brand}</span>
+                        <h3>${sp.name}</h3>
+                        <div class="star">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <h4>${giaFormatted}</h4>
                     </div>
-                    <h4>${giaFormatted}</h4>
-                </div>
+                </a>
+
                 <!-- Nút thêm vào giỏ hàng gọi hàm themVaoGioHang kèm theo ID sản phẩm -->
                 <button onclick="themVaoGioHang(${sp.id})" class="cart-btn">
                     <i class="fa-solid fa-cart-shopping"></i>
@@ -112,7 +116,6 @@ function hienThiSanPham(ds) {
     // Chèn toàn bộ chuỗi HTML vừa tạo vào bên trong thẻ chứa sản phẩm trên trang
     container.innerHTML = htmlContent;
 }
-
 // ==========================================
 // HÀM THÊM VÀO GIỎ HÀNG
 // ==========================================
