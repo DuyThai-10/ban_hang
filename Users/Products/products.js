@@ -43,6 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
             { id: 10, brand: "Puma", name: "Bộ đồ thể thao năng động", price: 950000, image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600", description: "Bộ trang phục thể thao..." },
             { id: 11, brand: "Calvin Klein", name: "Túi đeo chéo thời trang", price: 550000, image: "https://images.unsplash.com/photo-1544816155-12df9643f363?w=600", description: "Túi đeo chéo nhỏ gọn..." },
             { id: 12, brand: "Converse", name: "Mũ lưỡi trai cá tính", price: 220000, image: "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=600", description: "Mũ lưỡi trai phong cách..." }
+            
         ];
         // Lưu mảng mẫu này vào localStorage để sử dụng cho các lần sau
         localStorage.setItem("danhSachSanPham", JSON.stringify(danhSachSanPham));
@@ -71,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // ==========================================
-// HÀM VẼ GIAO DIỆN SẢN PHẨM LÊN TRANG
+// HÀM VẼ GIAO DIỆN SẢN PHẨM LÊN TRANG (ĐÃ TÍCH HỢP LINK CHI TIẾT)
 // ==========================================
 function hienThiSanPham(ds) {
     // Tìm đến khung chứa sản phẩm có id là "productContainer" trong file HTML
@@ -88,19 +89,23 @@ function hienThiSanPham(ds) {
         // Tạo khung HTML giao diện cho từng sản phẩm
         htmlContent += `
             <div class="pro">
-                <img src="${sp.image}" alt="${sp.name}">
-                <div class="des">
-                    <span>${sp.brand}</span>
-                    <h3>${sp.name}</h3>
-                    <div class="star">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
+                <!-- ⭐ Bọc ảnh và thông tin trong thẻ <a> để khi nhấn vào sẽ chuyển sang trang chi tiết -->
+                <a href="../Details/details.html?id=${sp.id}" style="text-decoration: none; color: inherit; display: block;">
+                    <img src="${sp.image}" alt="${sp.name}">
+                    <div class="des">
+                        <span>${sp.brand}</span>
+                        <h3>${sp.name}</h3>
+                        <div class="star">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <h4>${giaFormatted}</h4>
                     </div>
-                    <h4>${giaFormatted}</h4>
-                </div>
+                </a>
+
                 <!-- Nút thêm vào giỏ hàng gọi hàm themVaoGioHang kèm theo ID sản phẩm -->
                 <button onclick="themVaoGioHang(${sp.id})" class="cart-btn">
                     <i class="fa-solid fa-cart-shopping"></i>

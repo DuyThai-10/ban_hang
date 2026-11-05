@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Quản Trị - Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <!-- Sidebar menu bên trái -->
+    <aside class="sidebar">
+        <div class="logo">
+            <h2>WEB SHOP ADMIN</h2>
+        </div>
+        <ul class="menu">
+            <li id="menu-san-pham" class="active" onclick="chuyenTab('sanPham')">
+                <a href="#"><i class="fa-solid fa-box-open"></i> Quản lý sản phẩm</a>
+            </li>
+            <li id="menu-don-hang" onclick="chuyenTab('donHang')">
+                <a href="#"><i class="fa-solid fa-receipt"></i> Quản lý đơn hàng</a>
+            </li>
+            <li id="menu-tai-khoan" onclick="chuyenTab('taiKhoan')">
+                <a href="#"><i class="fa-solid fa-users"></i> Quản lý tài khoản</a>
+            </li>
+            <li><a href="#" onclick="khoiPhucDuLieuGoc()"><i class="fa-solid fa-rotate-right"></i> Khôi phục SP gốc</a></li>
+            <li><a href="#" onclick="dangXuatAdmin()" style="color: #ef4444;"><i class="fa-solid fa-right-from-bracket"></i> Đăng xuất</a></li>
+        </ul>
+    </aside>
+
+    <!-- Nội dung chính -->
+    <main class="main-content">
+        
+        <!-- ================= TAB 1: QUẢN LÝ SẢN PHẨM ================= -->
+        <section id="section-san-pham" class="tab-content">
+            <header class="topbar">
+                <h2>Danh sách sản phẩm trong hệ thống</h2>
+                <button class="btn-add" onclick="moModalThem()">
+                    <i class="fa-solid fa-plus"></i> Thêm sản phẩm mới
+                </button>
+            </header>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Hình ảnh</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Thương hiệu</th>
+                            <th>Giá bán</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-product-list"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ================= TAB 2: QUẢN LÝ ĐƠN HÀNG ================= -->
+        <section id="section-don-hang" class="tab-content" style="display: none;">
+            <header class="topbar">
+                <h2>Danh sách đơn hàng khách đã đặt</h2>
+            </header>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Mã đơn hàng</th>
+                            <th>Tài khoản đặt</th>
+                            <th>Thời gian đặt</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-order-list"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ================= TAB 3: QUẢN LÝ TÀI KHOẢN ================= -->
+        <section id="section-tai-khoan" class="tab-content" style="display: none;">
+            <header class="topbar">
+                <h2>Danh sách tài khoản người dùng (userList)</h2>
+            </header>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Họ tên</th>
+                            <th>Tên đăng nhập / Email</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-user-list"></tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Modal Thêm sản phẩm -->
+    <div id="add-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="dongModalThem()">&times;</span>
+            <h3>Thêm sản phẩm mới</h3>
+            <form id="form-add-product" onsubmit="themSanPhamMoi(event)">
+                <div class="form-group">
+                    <label>Tên sản phẩm:</label>
+                    <input type="text" id="input-name" required placeholder="Nhập tên...">
+                </div>
+                <div class="form-group">
+                    <label>Thương hiệu:</label>
+                    <input type="text" id="input-brand" required placeholder="Nhập thương hiệu...">
+                </div>
+                <div class="form-group">
+                    <label>Giá bán (VNĐ):</label>
+                    <input type="number" id="input-price" required placeholder="Ví dụ: 350000">
+                </div>
+                <div class="form-group">
+                    <label>Link hình ảnh (URL):</label>
+                    <input type="text" id="input-image" required placeholder="https://...">
+                </div>
+                <button type="submit" class="btn-submit">Xác nhận thêm</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Sửa sản phẩm -->
+    <div id="edit-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="dongModalSua()">&times;</span>
+            <h3>Chỉnh sửa thông tin sản phẩm</h3>
+            <form id="form-edit-product" onsubmit="capNhatSanPham(event)">
+                <input type="hidden" id="edit-id">
+                <div class="form-group">
+                    <label>Tên sản phẩm:</label>
+                    <input type="text" id="edit-name" required>
+                </div>
+                <div class="form-group">
+                    <label>Thương hiệu:</label>
+                    <input type="text" id="edit-brand" required>
+                </div>
+                <div class="form-group">
+                    <label>Giá bán (VNĐ):</label>
+                    <input type="number" id="edit-price" required>
+                </div>
+                <div class="form-group">
+                    <label>Link hình ảnh (URL):</label>
+                    <input type="text" id="edit-image" required>
+                </div>
+                <button type="submit" class="btn-submit" style="background-color: #f59e0b;">Lưu thay đổi</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
