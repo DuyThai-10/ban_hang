@@ -1,3 +1,36 @@
+
+// KIỂM TRA ĐĂNG NHẬP ADMIN
+const currentAdmin = JSON.parse(localStorage.getItem("currentAdmin"));
+
+if (!currentAdmin) {
+    window.location.href = "Login/login.html";
+}
+
+// HIỂN THỊ TÊN ADMIN
+const loiChao = document.querySelector(".loi-chao h2");
+
+if (currentAdmin && loiChao) {
+    loiChao.innerText = "Xin chào, " + (currentAdmin.hoTen || currentAdmin.tenDangNhap) + "!";
+}
+
+// XỬ LÝ ĐĂNG XUẤT
+const btnDangXuat = document.getElementById("btnDangXuat");
+
+if (btnDangXuat) {
+    btnDangXuat.addEventListener("click", function() {
+        const xacNhan = confirm("Bạn có chắc chắn muốn đăng xuất?");
+
+        if (xacNhan) {
+            localStorage.removeItem("currentAdmin");
+
+            alert("Đã đăng xuất thành công!");
+
+            window.location.href = "Login/login.html";
+        }
+    });
+}
+
+
 // 1. KHAI BÁO BIẾN VÀ LẤY DỮ LIỆU
         // ==========================================
 

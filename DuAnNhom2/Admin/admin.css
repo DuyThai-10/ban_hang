@@ -497,6 +497,26 @@
             font-weight: bold;
         }
 
+    .nhom-nut-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .nut-dang-xuat {
+        background: #e74c3c;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .nut-dang-xuat:hover {
+        background: #c0392b;
+    }
+
         /* ================================
            8. RESPONSIVE
         ================================= */
