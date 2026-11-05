@@ -26,4 +26,59 @@
                 window.location.reload(); // Tải lại trang để cập nhật giao diện
             });
         }
+
+
+
+ 
+
+// Lấy danh sách đơn hàng đã lưu
+const danhSachDonHang = JSON.parse(
+    localStorage.getItem("danhSachDonHang")
+) || [];
+
+
+// Đếm tổng số đơn hàng
+const tongDonHang = danhSachDonHang.length;
+
+
+// Tạo danh sách đếm số đơn hàng của từng khách hàng
+const demKhachHang = {};
+
+danhSachDonHang.forEach(function(donHang) {
+
+    // Lấy tên đăng nhập của khách hàng
+    const tenDangNhap = donHang.username;
+
+    // Kiểm tra khách hàng có thông tin hay không
+    if (tenDangNhap) {
+
+        // Đếm số đơn hàng của khách hàng
+        demKhachHang[tenDangNhap] =
+            (demKhachHang[tenDangNhap] || 0) + 1;
+    }
+});
+
+
+// Đếm khách hàng có từ 2 đơn hàng trở lên
+let tongKhachHangThanThiet = 0;
+
+for (let tenDangNhap in demKhachHang) {
+
+    if (demKhachHang[tenDangNhap] >= 2) {
+
+        tongKhachHangThanThiet++;
+    }
+}
+
+
+// Hiển thị tổng số đơn hàng
+document.getElementById("totalOrders").innerText =
+    tongDonHang.toLocaleString("vi-VN");
+
+
+// Hiển thị tổng số khách hàng thân thiết
+document.getElementById("loyalCustomers").innerText =
+    tongKhachHangThanThiet.toLocaleString("vi-VN");
+
+
     
