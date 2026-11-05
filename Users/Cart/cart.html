@@ -1,11 +1,23 @@
 <!DOCTYPE html> 
 <html lang="vi"> 
-<head> 
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giỏ hàng - WEB SHOP</title> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="cart.css">
+
+    <!-- 1. BẮT BUỘC ĐẶT DÒNG TẢI THƯ VIỆN NÀY LÊN TRÊN HẾT -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <!-- 2. SAU ĐÓ MỚI ĐẾN ĐOẠN KHỞI TẠO NÀY Ở DƯỚI -->
+    <script type="text/javascript">
+        (function(){
+            emailjs.init({
+                publicKey: "8lKRE4hQcyClpkjDA",
+            });
+        })();
+    </script>
 </head>
 <body> 
     <!-- THANH NAV CHUNG -->
@@ -20,7 +32,7 @@
                 <li><a href="../Home/home.html">Trang Chủ</a></li> <!-- Link về trang chủ -->
                 <li><a href="../Products/products.html">Sản Phẩm</a></li> <!-- Link sang trang sản phẩm -->
                 <li><a href="../About/about.html">Giới Thiệu</a></li> <!-- Link sang trang giới thiệu -->
-                <li><a href="../Contact/contact.html">Liên Lạc</a></li> <!-- Link sang trang liên hệ -->
+                <li><a href="../Contact/contact.html">Liên Hệ</a></li> <!-- Link sang trang liên hệ -->
                 <li>
                     
                     <a class="active" href="cart.html">
