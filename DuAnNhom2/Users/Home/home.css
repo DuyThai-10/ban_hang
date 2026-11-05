@@ -1,0 +1,319 @@
+/* ==========================================================================
+   1. CÀI ĐẶT CHUNG (RESET & BASE STYLES)
+   ========================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f6fa; /* Màu nền xám nhạt toàn trang */
+    color: #2f3640;            /* Màu chữ chính */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Khoảng cách đệm chung cho các section nội dung */
+.section-p1 {
+    padding: 40px 8%;
+}
+
+
+/* ==========================================================================
+   2. THANH MENU ĐẦU TRANG (HEADER & NAVBAR)
+   ========================================================================== */
+
+#header {
+    display: flex;                 /* Dàn hàng ngang */
+    justify-content: space-between;/* Đẩy logo sang trái, menu sang phải */
+    align-items: center;           /* Căn giữa theo chiều dọc */
+    padding: 15px 8%;
+    background-color: #ffffff;     /* Nền trắng */
+    position: sticky;              /* Ghim cố định ở đầu trang khi cuộn */
+    top: 0;
+    z-index: 1000;                 /* Luôn hiển thị nổi lên trên cùng */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Hiệu ứng bóng đổ nhẹ bên dưới */
+}
+
+.logo-text {
+    font-size: 22px;
+    font-weight: bold;
+    color: #0f8b8d;                /* Màu xanh thương hiệu */
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 25px;                     /* Khoảng cách giữa các mục menu */
+}
+
+.navbar a {
+    font-weight: 600;
+    font-size: 14px;
+    color: #2f3640;
+    transition: 0.2s;
+}
+
+/* Hiệu ứng đổi màu khi rê chuột hoặc đang ở trang hiện tại (active) */
+.navbar a:hover, .navbar a.active {
+    color: #0f8b8d;
+}
+
+
+/* ==========================================================================
+   3. KHU VỰC TÀI KHOẢN & ĐĂNG XUẤT TRÊN THANH NAV (#authMenu)
+   ========================================================================== */
+
+#authMenu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Định dạng nút Đăng nhập & Đăng ký */
+.btn-login, .btn-signup {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2f3640;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+
+.btn-login:hover, .btn-signup:hover {
+    color: #0f8b8d;
+}
+
+/* Định dạng khi đã đăng nhập (Hiển thị tên người dùng và nút Đăng xuất) */
+#authMenu div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#authMenu span {
+    font-weight: bold;
+    color: #0f8b8d;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+#btnDangXuat {
+    background-color: #e74c3c; /* Màu đỏ nổi bật cho nút đăng xuất */
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 13px;
+    transition: 0.2s;
+}
+
+#btnDangXuat:hover {
+    background-color: #c0392b; /* Đổi sang màu đỏ đậm khi rê chuột vào */
+}
+
+
+/* ==========================================================================
+   3. BANNER (HERO SECTION)
+   ========================================================================== */
+#hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1600') center/cover no-repeat;
+    padding: 90px 8%;
+    text-align: center;
+    color: #ffffff;
+    border-radius: 12px;
+    margin: 15px 8%;
+}
+
+#hero h4 {
+    font-size: 16px;
+    color: #f1c40f;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#hero h2 {
+    font-size: 22px;
+    margin: 8px 0;
+    color: #e8f3f1;
+}
+
+#hero h1 {
+    color: #ffffff;
+    font-size: 36px;
+    margin: 10px 0 15px 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#hero p {
+    font-size: 16px;
+    color: #f1f5f9;
+    margin-bottom: 20px;
+}
+
+.shop-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #0f8b8d;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.shop-button:hover {
+    background-color: #0a696a;
+    transform: translateY(-2px);
+}
+
+
+/* ==========================================================================
+   4. DỊCH VỤ (FEATURE SECTION)
+   ========================================================================== */
+
+#feature {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.fe-box {
+    flex: 1;
+    min-width: 150px;
+    background: #ffffff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.fe-box i {
+    font-size: 30px;
+    color: #0f8b8d;
+    margin-bottom: 10px;
+}
+
+
+/* ==========================================================================
+   5. KHỐI SẢN PHẨM (PRODUCT CARDS)
+   ========================================================================== */
+
+.pro-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.pro {
+    background: #ffffff;
+    border: 1px solid #e1e8ef;
+    border-radius: 10px;
+    padding: 15px;
+    width: 230px;
+    position: relative;
+}
+
+.pro img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.pro .des {
+    margin-top: 10px;
+}
+
+.pro .des span {
+    color: #888;
+    font-size: 12px;
+}
+
+.pro .des h3 {
+    font-size: 15px;
+    margin: 5px 0;
+}
+
+.pro .star {
+    color: #f1c40f;
+    font-size: 12px;
+}
+
+.pro .des h4 {
+    color: #e74c3c;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.cart-btn {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: #e8f3f1;
+    color: #0f8b8d;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* ==========================================================================
+   6. GIỚI THIỆU & FOOTER
+   ========================================================================== */
+
+.about-section {
+    background: #0f8b8d;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+footer {
+    background: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    border-top: 1px solid #e1e8ef;
+    padding: 40px 8%;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-logo {
+    color: #0f8b8d;
+}
+
+.copyright {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    color: #777;
+}

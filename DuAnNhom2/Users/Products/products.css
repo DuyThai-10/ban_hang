@@ -1,0 +1,217 @@
+/* ==========================================================================
+   1. CÀI ĐẶT CHUNG (RESET & BASE STYLES)
+   ========================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f6fa; /* Màu nền xám nhạt toàn trang */
+    color: #2f3640;            /* Màu chữ chính */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Khoảng cách đệm chung cho các section nội dung */
+.section-p1 {
+    padding: 40px 8%;
+}
+
+
+/* ==========================================================================
+   2. THANH MENU ĐẦU TRANG (HEADER & NAVBAR)
+   ========================================================================== */
+
+#header {
+    display: flex;                 /* Dàn hàng ngang */
+    justify-content: space-between;/* Đẩy logo sang trái, menu sang phải */
+    align-items: center;           /* Căn giữa theo chiều dọc */
+    padding: 15px 8%;
+    background-color: #ffffff;     /* Nền trắng */
+    position: sticky;              /* Ghim cố định ở đầu trang khi cuộn */
+    top: 0;
+    z-index: 1000;                 /* Luôn hiển thị nổi lên trên cùng */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Hiệu ứng bóng đổ nhẹ bên dưới */
+}
+
+.logo-text {
+    font-size: 22px;
+    font-weight: bold;
+    color: #0f8b8d;                /* Màu xanh thương hiệu */
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 25px;                     /* Khoảng cách giữa các mục menu */
+}
+
+.navbar a {
+    font-weight: 600;
+    font-size: 14px;
+    color: #2f3640;
+    transition: 0.2s;
+}
+
+/* Hiệu ứng đổi màu khi rê chuột hoặc đang ở trang hiện tại (active) */
+.navbar a:hover, .navbar a.active {
+    color: #0f8b8d;
+}
+
+
+/* ==========================================================================
+   3. KHU VỰC TÀI KHOẢN & ĐĂNG XUẤT TRÊN THANH NAV (#authMenu)
+   ========================================================================== */
+
+#authMenu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Định dạng nút Đăng nhập & Đăng ký */
+.btn-login, .btn-signup {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2f3640;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+
+.btn-login:hover, .btn-signup:hover {
+    color: #0f8b8d;
+}
+
+/* Định dạng khi đã đăng nhập (Hiển thị tên người dùng và nút Đăng xuất) */
+#authMenu div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#authMenu span {
+    font-weight: bold;
+    color: #0f8b8d;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+#btnDangXuat {
+    background-color: #e74c3c; /* Màu đỏ nổi bật cho nút đăng xuất */
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 13px;
+    transition: 0.2s;
+}
+
+#btnDangXuat:hover {
+    background-color: #c0392b; /* Đổi sang màu đỏ đậm khi rê chuột vào */
+}
+
+
+/* ==========================================================================
+   3. KHU VỰC CHỨA CÁC THẺ SẢN PHẨM (PRODUCT CONTAINER)
+   ========================================================================== */
+
+.pro-container {
+    display: flex;                 /* Dàn các sản phẩm nằm ngang */
+    justify-content: center;       /* Căn giữa các sản phẩm */
+    gap: 20px;                     /* Khoảng cách giữa các ô sản phẩm */
+    flex-wrap: wrap;               /* Tự động xuống dòng khi hết màn hình */
+}
+
+/* Khung bọc của từng sản phẩm */
+.pro {
+    background: #ffffff;
+    border: 1px solid #e1e8ef;     /* Viền xám nhạt bao quanh */
+    border-radius: 10px;           /* Bo tròn góc khung sản phẩm */
+    padding: 15px;                 /* Khoảng cách bên trong khung */
+    width: 230px;                  /* Chiều rộng cố định cho mỗi ô sản phẩm */
+    position: relative;            /* Để định vị nút thêm vào giỏ hàng bên trong */
+    transition: 0.3s ease;         /* Hiệu ứng chuyển động mượt */
+}
+
+/* Hiệu ứng nhô lên nhẹ khi rê chuột vào khung sản phẩm */
+.pro:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transform: translateY(-3px);
+}
+
+/* Định dạng hình ảnh sản phẩm */
+.pro img {
+    width: 100%;                   /* Chiếm full chiều rộng khung */
+    height: 200px;                 /* Chiều cao cố định ảnh */
+    object-fit: cover;             /* Cắt ảnh vừa khít không bị méo */
+    border-radius: 8px;
+}
+
+/* Phần chữ mô tả sản phẩm (Thương hiệu, Tên, Sao, Giá) */
+.pro .des {
+    margin-top: 10px;
+}
+
+.pro .des span {
+    color: #888;                   /* Màu xám cho tên thương hiệu (ví dụ: Adidas) */
+    font-size: 12px;
+}
+
+.pro .des h3 {
+    font-size: 15px;
+    margin: 5px 0;
+    color: #2f3640;
+}
+
+/* Đánh giá sao */
+.pro .star {
+    color: #f1c40f;                /* Màu vàng cho các ngôi sao */
+    font-size: 12px;
+}
+
+/* Giá tiền */
+.pro .des h4 {
+    color: #e74c3c;                /* Màu đỏ nổi bật cho giá sản phẩm */
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+/* Nút bấm "Thêm vào giỏ hàng" nằm ở góc phải dưới mỗi ô sản phẩm */
+.cart-btn {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: #e8f3f1;           /* Nền xanh nhạt */
+    color: #0f8b8d;                /* Icon màu xanh đậm */
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;            /* Bo tròn thành hình tròn */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;               /* Đổi con trỏ chuột thành hình bàn tay khi bấm */
+    transition: 0.2s;
+}
+
+/* Hiệu ứng khi rê chuột vào nút giỏ hàng */
+.cart-btn:hover {
+    background: #0f8b8d;
+    color: #ffffff;                /* Đổi màu nền xanh, chữ trắng khi hover */
+}

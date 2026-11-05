@@ -1,0 +1,325 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<link>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - WEB SHOP</title>
+
+    <link rel="stylesheet" href="admin.css"></link>
+</head>
+
+<body>
+
+    <!-- ================================
+         THANH MENU BÊN TRÁI
+    ================================= -->
+    <aside class="thanh-ben">
+
+        <div class="logo">WEB SHOP</div>
+
+        <p class="tieu-de-menu">MENU CHÍNH</p>
+
+        <nav class="menu">
+
+            <a href="#" class="active" data-trang="tongquan">
+                <span class="menu-icon">▦</span>
+                <span>Tổng quan</span>
+            </a>
+
+            <a href="#" data-trang="sanpham">
+                <span class="menu-icon">▣</span>
+                <span>Sản phẩm</span>
+            </a>
+
+            <a href="#" data-trang="donhang">
+                <span class="menu-icon">🛒</span>
+                <span>Đơn hàng</span>
+            </a>
+
+            <a href="#" data-trang="khachhang">
+                <span class="menu-icon">♙</span>
+                <span>Khách hàng</span>
+            </a>
+
+            <a href="#" data-trang="danhmuc">
+                <span class="menu-icon">▤</span>
+                <span>Danh mục</span>
+            </a>
+
+        </nav>
+
+        <p class="tieu-de-menu">HỆ THỐNG</p>
+
+        <nav class="menu">
+            <a href="#" data-trang="caidat">
+                <span class="menu-icon">⚙</span>
+                <span>Cài đặt</span>
+            </a>
+        </nav>
+
+        <div class="thong-tin-admin">
+            <div class="anh-admin">♙</div>
+            <div>
+                <h4>Quản trị viên</h4>
+                <span>Administrator</span>
+            </div>
+        </div>
+
+    </aside>
+
+
+    <!-- ================================
+         KHU VỰC CHÍNH
+    ================================= -->
+    <main class="khu-vuc-chinh">
+
+        <header class="thanh-dau">
+            <h2 id="tieuDeTrang">Tổng quan</h2>
+
+            <div class="nhom-nut-header">
+                <a href="../Users/Home/home.html" class="nut-xem-web">
+                    ↗ Xem trang User
+                </a>
+
+                <button id="btnDangXuat" class="nut-dang-xuat">
+                    Đăng xuất
+                </button>
+            </div>
+        </header>
+
+
+        <section class="noi-dung">
+
+            <div class="loi-chao">
+                <h2>Xin chào, Quản trị viên!</h2>
+                <p>Chào mừng bạn đến với hệ thống quản lý WEB SHOP.</p>
+            </div>
+
+
+            <!-- THỐNG KÊ -->
+            <div class="luoi-thong-ke">
+
+                <div class="the-thong-ke">
+                    <div class="bieu-tuong">▣</div>
+                    <h3 id="tongSanPham">0</h3>
+                    <p>Tổng sản phẩm</p>
+                </div>
+
+                <div class="the-thong-ke">
+                    <div class="bieu-tuong">✓</div>
+                    <h3 id="sanPhamConHang">0</h3>
+                    <p>Sản phẩm còn hàng</p>
+                </div>
+
+                <div class="the-thong-ke">
+                    <div class="bieu-tuong">!</div>
+                    <h3 id="sanPhamHetHang">0</h3>
+                    <p>Sản phẩm hết hàng</p>
+                </div>
+
+                <div class="the-thong-ke">
+                    <div class="bieu-tuong">▤</div>
+                    <h3 id="tongTonKho">0</h3>
+                    <p>Tổng số lượng tồn kho</p>
+                </div>
+
+            </div>
+
+
+            <!-- QUẢN LÝ SẢN PHẨM -->
+            <div class="khung-quan-ly">
+
+                <div class="dau-khung">
+                    <div>
+                        <h3>Quản lý sản phẩm</h3>
+                        <p style="color:#999;font-size:12px;margin-top:6px">
+                            Thêm, sửa và xóa sản phẩm trong cửa hàng
+                        </p>
+                    </div>
+
+                    <button class="nut-them" id="btnThemSanPham">
+                        + Thêm sản phẩm
+                    </button>
+                </div>
+
+
+                <!-- TÌM KIẾM VÀ LỌC -->
+                <div class="bo-loc">
+
+                    <input
+                        type="text"
+                        id="timKiem"
+                        placeholder="Tìm theo tên hoặc thương hiệu..."
+                    >
+
+                    <select id="locDanhMuc">
+                        <option value="">Tất cả danh mục</option>
+                        <option value="Áo">Áo</option>
+                        <option value="Quần">Quần</option>
+                        <option value="Giày">Giày</option>
+                        <option value="Phụ kiện">Phụ kiện</option>
+                        <option value="Đồng hồ">Đồng hồ</option>
+                    </select>
+
+                </div>
+
+
+                <!-- BẢNG SẢN PHẨM -->
+                <div class="bang-tran">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>Hình ảnh</th>
+                                <th>Tên sản phẩm</th>
+                                <th>Thương hiệu</th>
+                                <th>Danh mục</th>
+                                <th>Giá bán</th>
+                                <th>Số lượng</th>
+                                <th>Trạng thái</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="bangSanPham">
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================================
+         FORM THÊM / SỬA SẢN PHẨM
+    ================================= -->
+    <div class="lop-phu" id="lopPhu">
+
+        <div class="hop-thoai">
+
+            <div class="dau-hop-thoai">
+                <h3 id="tieuDeForm">Thêm sản phẩm</h3>
+                <button class="nut-dong" id="btnDong">&times;</button>
+            </div>
+
+            <form id="formSanPham">
+
+                <input type="hidden" id="maSanPham">
+
+                <div class="nhom-form">
+                    <label>Tên sản phẩm *</label>
+                    <input
+                        type="text"
+                        id="tenSanPham"
+                        placeholder="Nhập tên sản phẩm"
+                        required
+                    >
+                </div>
+
+                <div class="hang-form">
+
+                    <div class="nhom-form">
+                        <label>Thương hiệu *</label>
+                        <input
+                            type="text"
+                            id="thuongHieu"
+                            placeholder="Ví dụ: Adidas"
+                            required
+                        >
+                    </div>
+
+                    <div class="nhom-form">
+                        <label>Danh mục *</label>
+                        <select id="danhMuc" required>
+                            <option value="">Chọn danh mục</option>
+                            <option value="Áo">Áo</option>
+                            <option value="Quần">Quần</option>
+                            <option value="Giày">Giày</option>
+                            <option value="Phụ kiện">Phụ kiện</option>
+                            <option value="Đồng hồ">Đồng hồ</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="hang-form">
+
+                    <div class="nhom-form">
+                        <label>Giá bán (VNĐ) *</label>
+                        <input
+                            type="number"
+                            id="giaSanPham"
+                            min="0"
+                            placeholder="350000"
+                            required
+                        >
+                    </div>
+
+                    <div class="nhom-form">
+                        <label>Số lượng *</label>
+                        <input
+                            type="number"
+                            id="soLuong"
+                            min="0"
+                            placeholder="20"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+                <div class="nhom-form">
+                    <label>Đường dẫn hình ảnh *</label>
+                    <input
+                        type="text"
+                        id="hinhAnh"
+                        placeholder="Nhập URL hình ảnh sản phẩm"
+                        required
+                    >
+
+                    <img id="anhXemTruoc" alt="Xem trước sản phẩm">
+                </div>
+
+                <div class="nhom-form">
+                    <label>Mô tả sản phẩm</label>
+                    <textarea
+                        id="moTa"
+                        placeholder="Nhập mô tả sản phẩm..."
+                    ></textarea>
+                </div>
+
+                <div class="cuoi-hop-thoai">
+
+                    <button
+                        type="button"
+                        class="nut-huy"
+                        id="btnHuy"
+                    >
+                        Hủy
+                    </button>
+
+                    <button type="submit" class="nut-luu">
+                        Lưu sản phẩm
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    
+    <script src="admin.js"></script>
+
+</body>
+</html>
