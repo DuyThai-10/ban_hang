@@ -35,19 +35,20 @@ function hienThiLichSuDonHang() {
         return;
     }
 
+    // ⭐ ĐẢO NGƯỢC MẢNG: Đơn hàng mới đặt (nằm cuối mảng gốc) sẽ được đẩy lên đầu tiên
+    donHangCuaToi.reverse();
+
     // 5. Thêm nút "Xóa tất cả lịch sử" ở trên cùng, sau đó duyệt qua từng đơn hàng
     let htmlContent = `
         <div style="text-align: right; margin-bottom: 15px;">
-            <button onclick="xoaTatCaDonHangCuaToi()" style="background-color: #ef4444; color: white; border: none; padding: 8px 14px; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: bold;">
-                <i class="fa-solid fa-trash"></i> Xóa tất cả lịch sử đơn
-            </button>
+            <!-- Nếu bạn có nút xóa tất cả, có thể đặt onclick="xoaTatCaDonHangCuaToi()" vào đây -->
         </div>
     `;
 
     donHangCuaToi.forEach(don => {
         let danhSachSanPhamHTML = "";
         
-        // Duyệt qua mảng danhSachSanPham trong từng đơn hàng (Đã fix chuẩn cú pháp nhân giá tiền)
+        // Duyệt qua mảng danhSachSanPham trong từng đơn hàng
         don.danhSachSanPham.forEach(sp => {
             let thanhTienSP = sp.price * sp.soLuong;
             danhSachSanPhamHTML += `
@@ -59,11 +60,6 @@ function hienThiLichSuDonHang() {
             <div class="order-card">
                 <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #f1f5f9; padding-bottom: 10px; margin-bottom: 15px;">
                     <h3 style="margin: 0; border: none; padding: 0;"><i class="fa-solid fa-receipt"></i> Mã đơn hàng: ${don.maDonHang}</h3>
-                    
-                    <!-- NÚT XÓA TỪNG ĐƠN HÀNG -->
-                    <button onclick="xoaDonHang('${don.maDonHang}')" style="background: none; border: 1px solid #ef4444; color: #ef4444; padding: 4px 10px; border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: bold;">
-                        <i class="fa-solid fa-xmark"></i> Hủy / Xóa đơn
-                    </button>
                 </div>
 
                 <p><strong>🕒 Ngày đặt:</strong> ${don.ngayDat}</p>
@@ -84,23 +80,6 @@ function hienThiLichSuDonHang() {
     container.innerHTML = htmlContent;
 }
 
-// ==========================================
-// HÀM XÓA MỘT ĐƠN HÀNG CỤ THỂ
-// ==========================================
-function xoaDonHang(maDonHang) {
-    if (confirm(`Bạn có chắc chắn muốn hủy / xóa đơn hàng ${maDonHang} này không?`)) {
-        let danhSachDonHang = JSON.parse(localStorage.getItem("danhSachDonHang")) || [];
-        
-        // Lọc bỏ đơn hàng có maDonHang trùng khớp
-        danhSachDonHang = danhSachDonHang.filter(don => don.maDonHang !== maDonHang);
-        
-        // Cập nhật lại vào localStorage
-        localStorage.setItem("danhSachDonHang", JSON.stringify(danhSachDonHang));
-        
-        alert("Đã xóa đơn hàng thành công!");
-        hienThiLichSuDonHang();
-    }
-}
 
 // ==========================================
 // HÀM XÓA SẠCH TOÀN BỘ ĐƠN HÀNG CỦA TÀI KHOẢN HIỆN TẠI
