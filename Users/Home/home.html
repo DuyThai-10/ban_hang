@@ -15,16 +15,16 @@
 <body>
 
     <header id="header">
-    <!-- Logo bên trái -->
-    <a href="../Home/home.html" class="logo-link">
-        <span class="logo-text">WEB SHOP</span>
-    </a>
+        <!-- Logo bên trái -->
+        <a href="../Home/home.html" class="logo-link">
+            <span class="logo-text">WEB SHOP</span>
+        </a>
 
-    <!-- THANH TÌM KIẾM Ở CHÍNH GIỮA HEADER -->
-    
-<div class="search-box-container">
-    <form action="../Products/products.html" method="GET" class="search-input-wrapper">
-        <button type="submit" style="background: none; border: none; cursor: pointer;">
+        <!-- THANH TÌM KIẾM Ở CHÍNH GIỮA HEADER -->
+
+        <div class="search-box-container">
+            <form action="../Products/products.html" method="GET" class="search-input-wrapper">
+                <button type="submit" style="background: none; border: none; cursor: pointer;">
             <i class="fa-solid fa-magnifying-glass search-icon"></i>
         </button>
         <input type="text" name="search" id="navbarSearchInput" placeholder="Tìm kiếm sản phẩm...">
@@ -57,6 +57,30 @@
 </header>
     
 
+        <!-- Menu điều hướng bên phải -->
+        <nav>
+            <ul class="navbar">
+                <li><a class="active" href="home.html">Trang Chủ</a></li>
+                <li><a href="../Products/products.html">Sản Phẩm</a></li>
+                <li><a href="../About/about.html">Giới Thiệu</a></li>
+                <li><a href="../Contact/contact.html">Liên Lạc</a></li>
+                <li>
+                    <a href="../Cart/cart.html">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                </li>
+                <!-- Khung tài khoản dùng chung -->
+                <li id="authMenu">
+                    <a href="../LogIn/login.html" class="btn-login">
+                        <i class="fa-solid fa-right-to-bracket"></i> Đăng nhập
+                    </a>
+                    <a href="../SignUp/signup.html" class="btn-signup">
+                        <i class="fa-solid fa-right-from-bracket"></i> Đăng ký
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
 
     <!-- ================= 2. BANNER (HERO SECTION) ================= -->
@@ -90,7 +114,7 @@
         </a>
     </section>
 
-    
+
     <!-- ================= 4. DANH SÁCH SẢN PHẨM ================= -->
     <!-- KHU VỰC HIỂN THỊ SẢN PHẨM NỔI BẬT (Đổ dữ liệu động bằng JavaScript) -->
     <section id="product1" class="section-p1">
@@ -158,7 +182,7 @@
         </div>
     </footer>
 
-    
+
     <script src="home.js"></script>
 </body>
 
